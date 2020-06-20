@@ -16,5 +16,28 @@ namespace Gestion_Laboratorios
         {
             InitializeComponent();
         }
+
+        private void AulaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.aulaBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.gestion_laboratoriosDataSet);
+
+        }
+
+        private void AulaBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.aulaBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.gestion_laboratoriosDataSet);
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'gestion_laboratoriosDataSet.Aula' table. You can move, or remove it, as needed.
+            this.aulaTableAdapter.Fill(this.gestion_laboratoriosDataSet.Aula);
+
+        }
     }
 }
