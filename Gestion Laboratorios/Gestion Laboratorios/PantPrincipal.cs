@@ -76,5 +76,19 @@ namespace Gestion_Laboratorios
             frmRes.ShowDialog();
 
         }
+
+        private void dgvReserv_CellDobleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dvgReservaciones.SelectedRows[0];
+            Reservacion reserva = new Reservacion();
+            reserva.N_Reservacion = Int32.Parse(row.Cells[0].Value.ToString());
+            reserva.Empleado = row.Cells[1].Value.ToString();
+            reserva.Usuario = row.Cells[2].Value.ToString();
+          //  reserva.Aula = row.Cells[3].Value.ToString();
+
+            FrmReservacion frmRes = new FrmReservacion();
+            frmRes.reserva = reserva;
+            frmRes.ShowDialog();
+        }
     }
 }

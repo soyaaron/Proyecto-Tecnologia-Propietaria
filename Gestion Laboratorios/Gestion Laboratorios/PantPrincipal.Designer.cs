@@ -105,6 +105,7 @@
             this.dvgReservaciones.Name = "dvgReservaciones";
             this.dvgReservaciones.Size = new System.Drawing.Size(978, 335);
             this.dvgReservaciones.TabIndex = 1;
+            this.dvgReservaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReserv_CellDobleClick);
             this.dvgReservaciones.DoubleClick += new System.EventHandler(this.dgvReserv_DobleClick);
             // 
             // button1

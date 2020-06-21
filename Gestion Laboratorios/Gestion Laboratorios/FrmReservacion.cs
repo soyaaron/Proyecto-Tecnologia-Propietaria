@@ -29,6 +29,7 @@ namespace Gestion_Laboratorios
                 txtEmpleado.Text = reserva.Empleado.ToString();
                 fexhaReserva.Text = reserva.FechaReservacion.ToString();
                 txtCantidadHoras.Text = reserva.Cantidad_horas.ToString();
+              //  cbxAulaReserv.TabIndex = reserva.Aula.ToString(); 
 
 
             }
@@ -49,6 +50,11 @@ namespace Gestion_Laboratorios
             entities.SaveChanges();
             MessageBox.Show("Reserva guarada con exito");
             this.Close();
+
+        }
+
+        private void CbxAulaReserv_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
