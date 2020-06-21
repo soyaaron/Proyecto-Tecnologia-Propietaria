@@ -43,7 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CmdBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +79,7 @@
             this.label1.Size = new System.Drawing.Size(63, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Campus:";
+            this.label1.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // comboBox1
             // 
@@ -170,16 +171,16 @@
             this.button2.TabIndex = 12;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // CmdBuscar
             // 
-            this.button1.BackgroundImage = global::Gestion_Laboratorios.Properties.Resources.untitled;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(798, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 64);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.CmdBuscar.BackgroundImage = global::Gestion_Laboratorios.Properties.Resources.untitled;
+            this.CmdBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CmdBuscar.Location = new System.Drawing.Point(798, 12);
+            this.CmdBuscar.Name = "CmdBuscar";
+            this.CmdBuscar.Size = new System.Drawing.Size(106, 64);
+            this.CmdBuscar.TabIndex = 3;
+            this.CmdBuscar.UseVisualStyleBackColor = true;
+            this.CmdBuscar.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form3
             // 
@@ -195,7 +196,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CmdBuscar);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -214,7 +215,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CmdBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
