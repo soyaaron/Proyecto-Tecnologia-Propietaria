@@ -39,5 +39,15 @@ namespace Gestion_Laboratorios
             this.aulaTableAdapter.Fill(this.gestion_laboratoriosDataSet.Aula);
 
         }
+
+        private void idAulaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idAulaLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
