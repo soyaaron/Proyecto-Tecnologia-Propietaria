@@ -13,8 +13,8 @@ namespace Gestion_Laboratorios
 {
     public partial class FrmReservacion : Form
     {
-       // public TblReservaciones reservaciones { get; set; }
-        private Gestion_laboratoriosEntities entities = new Gestion_laboratoriosEntities();
+        public Reservacion reserva { get; set; }
+        private ReservEntities entities = new ReservEntities();
 
         public FrmReservacion()
         {
@@ -23,7 +23,34 @@ namespace Gestion_Laboratorios
 
         private void FrmReservar_Load(object sender, EventArgs e)
         {
-            
+            if (reserva != null)
+            {
+                txtUsuario.Text = reserva.Usuario.ToString();
+                txtN_Reservacion.Text = reserva.N_Reservacion.ToString();
+                txtEmpleado.Text = reserva.Empleado.ToString();
+                fexhaReserva.Text = reserva.FechaReservacion.ToString();
+                txtCantidadHoras.Text = reserva.Cantidad_horas.ToString();
+
+
+            }
+        }
+
+        private void BtnGuardarReserva_Click(object sender, EventArgs e)
+        {
+            entities.Reservacion.Add(
+                new Reservacion
+                {
+                    //N_Reservacion = txtN_Reservacion.Text,
+                    Empleado = txtEmpleado.Text,
+                    Usuario = txtUsuario.Text,
+                    //FechaReservacion = txtUsuario=fexhaReserva,
+                    //Cantidad_horas = txtCantidadHoras.Text
+                    Comentario = txtComentario.Text
+                });
+            entities.SaveChanges();
+            MessageBox.Show("Reserva guarada con exito");
+            this.Close();
+
         }
     }
 }
