@@ -1,6 +1,6 @@
 ﻿namespace Gestion_Laboratorios
 {
-    partial class Form5
+    partial class FrmAula
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAula));
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -66,6 +66,10 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "001",
+            "002",
+            "003"});
             this.comboBox2.Location = new System.Drawing.Point(254, 21);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
@@ -217,7 +221,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(723, 265);
             this.dataGridView1.TabIndex = 16;
             // 
-            // Form5
+            // FrmAula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -239,7 +243,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form5";
+            this.Name = "FrmAula";
             this.Text = "Gestion de Aulas";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gestion_laboratoriosDataSet)).EndInit();
