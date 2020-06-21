@@ -140,6 +140,13 @@
             // 
             this.comboBox3.Enabled = false;
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "01:00 PM",
+            "02:00 PM",
+            "03:00 PM",
+            "04:00 PM",
+            "05:00 PM",
+            "06:00 PM"});
             this.comboBox3.Location = new System.Drawing.Point(470, 72);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(227, 24);
@@ -159,6 +166,13 @@
             // 
             this.comboBox4.Enabled = false;
             this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "01:00 PM",
+            "02:00 PM",
+            "03:00 PM",
+            "04:00 PM",
+            "05:00 PM",
+            "06:00 PM"});
             this.comboBox4.Location = new System.Drawing.Point(470, 122);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(227, 24);
