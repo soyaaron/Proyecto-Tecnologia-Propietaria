@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Laboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Disponibilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -44,8 +46,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.CmdBuscar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.Laboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Disponibilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +54,7 @@
             // 
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(9, 124);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(671, 263);
             this.panel1.TabIndex = 0;
@@ -64,228 +64,18 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< HEAD
-            this.dataGridView1.Location = new System.Drawing.Point(2, 2);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Laboratorio,
             this.Disponibilidad});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
->>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
+            this.dataGridView1.Location = new System.Drawing.Point(3, 23);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(667, 372);
+            this.dataGridView1.Size = new System.Drawing.Size(667, 352);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Campus:";
-            this.label1.Click += new System.EventHandler(this.label1_Click_2);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DisplayMember = "campus";
-            this.comboBox1.FormattingEnabled = true;
-<<<<<<< HEAD
-            this.comboBox1.Location = new System.Drawing.Point(68, 15);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
-            this.comboBox1.Items.AddRange(new object[] {
-            "01 - Gomez",
-            "02 - Cafan",
-            "03 - Cibao"});
-            this.comboBox1.Location = new System.Drawing.Point(90, 19);
->>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 21);
-            this.comboBox1.TabIndex = 2;
-<<<<<<< HEAD
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 62);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Aula:";
-=======
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
->>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-<<<<<<< HEAD
-            this.comboBox2.Location = new System.Drawing.Point(68, 62);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
-            this.comboBox2.Items.AddRange(new object[] {
-            "01",
-            "02",
-            "03",
-            "04",
-            "05"});
-            this.comboBox2.Location = new System.Drawing.Point(90, 76);
->>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(169, 21);
-            this.comboBox2.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(276, 15);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Fecha:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // dateTimePicker1
-            // 
-<<<<<<< HEAD
-            this.dateTimePicker1.Location = new System.Drawing.Point(339, 17);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
-=======
-            this.dateTimePicker1.Location = new System.Drawing.Point(470, 21);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(227, 22);
->>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
-            this.dateTimePicker1.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(264, 64);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Horas (Inicio):";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-<<<<<<< HEAD
-            this.comboBox3.Location = new System.Drawing.Point(352, 62);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(138, 21);
-=======
-            this.comboBox3.Items.AddRange(new object[] {
-            "07:00 AM",
-            "08:00 AM",
-            "09:00 AM",
-            "10:00 AM",
-            "11:00 AM",
-            "12:00 PM",
-            "01:00 PM",
-            "02:00 PM",
-            "03:00 PM",
-            "04:00 PM",
-            "05:00 PM",
-            "06:00 PM",
-            "07:00 PM",
-            "08:00 PM",
-            "09:00 PM"});
-            this.comboBox3.Location = new System.Drawing.Point(470, 72);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(227, 24);
->>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
-            this.comboBox3.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(264, 102);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Horas (Final):";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-<<<<<<< HEAD
-            this.comboBox4.Location = new System.Drawing.Point(352, 99);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(138, 21);
-=======
-            this.comboBox4.Items.AddRange(new object[] {
-            "08:00 AM",
-            "09:00 AM",
-            "10:00 AM",
-            "11:00 AM",
-            "12:00 PM",
-            "01:00 PM",
-            "02:00 PM",
-            "03:00 PM",
-            "04:00 PM",
-            "05:00 PM",
-            "06:00 PM",
-            "07:00 PM",
-            "08:00 PM",
-            "09:00 PM"});
-            this.comboBox4.Location = new System.Drawing.Point(470, 122);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(227, 24);
->>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
-            this.comboBox4.TabIndex = 11;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::Gestion_Laboratorios.Properties.Resources.images;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(601, 69);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 52);
-            this.button2.TabIndex = 12;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // CmdBuscar
-            // 
-            this.CmdBuscar.BackgroundImage = global::Gestion_Laboratorios.Properties.Resources.untitled;
-            this.CmdBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CmdBuscar.Location = new System.Drawing.Point(598, 10);
-            this.CmdBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.CmdBuscar.Name = "CmdBuscar";
-            this.CmdBuscar.Size = new System.Drawing.Size(80, 52);
-            this.CmdBuscar.TabIndex = 3;
-            this.CmdBuscar.UseVisualStyleBackColor = true;
-            this.CmdBuscar.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 85);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 17);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Edifico:";
             // 
             // Laboratorio
             // 
@@ -304,16 +94,177 @@
             this.Disponibilidad.ReadOnly = true;
             this.Disponibilidad.Width = 125;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Campus:";
+            this.label1.Click += new System.EventHandler(this.label1_Click_2);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DisplayMember = "campus";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "01 - Gomez",
+            "02 - Cafan",
+            "03 - Cibao"});
+            this.comboBox1.Location = new System.Drawing.Point(90, 19);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(169, 21);
+            this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05"});
+            this.comboBox2.Location = new System.Drawing.Point(90, 76);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(169, 21);
+            this.comboBox2.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(411, 27);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Fecha:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(470, 21);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(227, 20);
+            this.dateTimePicker1.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(394, 64);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Horas (Inicio):";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "07:00 AM",
+            "08:00 AM",
+            "09:00 AM",
+            "10:00 AM",
+            "11:00 AM",
+            "12:00 PM",
+            "01:00 PM",
+            "02:00 PM",
+            "03:00 PM",
+            "04:00 PM",
+            "05:00 PM",
+            "06:00 PM",
+            "07:00 PM",
+            "08:00 PM",
+            "09:00 PM"});
+            this.comboBox3.Location = new System.Drawing.Point(470, 61);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(227, 21);
+            this.comboBox3.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(394, 105);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Horas (Final):";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "08:00 AM",
+            "09:00 AM",
+            "10:00 AM",
+            "11:00 AM",
+            "12:00 PM",
+            "01:00 PM",
+            "02:00 PM",
+            "03:00 PM",
+            "04:00 PM",
+            "05:00 PM",
+            "06:00 PM",
+            "07:00 PM",
+            "08:00 PM",
+            "09:00 PM"});
+            this.comboBox4.Location = new System.Drawing.Point(470, 102);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(227, 21);
+            this.comboBox4.TabIndex = 11;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::Gestion_Laboratorios.Properties.Resources.images;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(746, 85);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(80, 52);
+            this.button2.TabIndex = 12;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // CmdBuscar
+            // 
+            this.CmdBuscar.BackgroundImage = global::Gestion_Laboratorios.Properties.Resources.untitled;
+            this.CmdBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CmdBuscar.Location = new System.Drawing.Point(746, 15);
+            this.CmdBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.CmdBuscar.Name = "CmdBuscar";
+            this.CmdBuscar.Size = new System.Drawing.Size(80, 52);
+            this.CmdBuscar.TabIndex = 3;
+            this.CmdBuscar.UseVisualStyleBackColor = true;
+            this.CmdBuscar.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 85);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Edifico:";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(689, 396);
-=======
-            this.ClientSize = new System.Drawing.Size(919, 488);
+            this.ClientSize = new System.Drawing.Size(847, 403);
             this.Controls.Add(this.label6);
->>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label5);
@@ -325,11 +276,8 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-<<<<<<< HEAD
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
             this.Controls.Add(this.comboBox3);
->>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form3";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
@@ -359,5 +307,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Laboratorio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Disponibilidad;
+
     }
 }
