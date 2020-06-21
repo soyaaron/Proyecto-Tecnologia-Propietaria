@@ -69,7 +69,12 @@
             this.Laboratorio,
             this.Disponibilidad});
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.dataGridView1.Location = new System.Drawing.Point(0, 1);
+=======
+            this.dataGridView1.Location = new System.Drawing.Point(4, 3);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> 870591fc8e4befb275a6520121b89486ec5cd112
 =======
             this.dataGridView1.Location = new System.Drawing.Point(4, 3);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
@@ -79,7 +84,11 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.dataGridView1.Size = new System.Drawing.Size(895, 323);
+=======
+            this.dataGridView1.Size = new System.Drawing.Size(667, 352);
+>>>>>>> 870591fc8e4befb275a6520121b89486ec5cd112
 =======
             this.dataGridView1.Size = new System.Drawing.Size(667, 352);
 >>>>>>> 870591fc8e4befb275a6520121b89486ec5cd112
@@ -269,6 +278,7 @@
             this.label6.Text = "Edifico:";
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             // Laboratorio
             // 
             this.Laboratorio.HeaderText = "Laboratorio";
@@ -285,6 +295,8 @@
             this.Disponibilidad.ReadOnly = true;
             this.Disponibilidad.Width = 125;
             // 
+=======
+>>>>>>> 870591fc8e4befb275a6520121b89486ec5cd112
 =======
 >>>>>>> 870591fc8e4befb275a6520121b89486ec5cd112
             // Form3
