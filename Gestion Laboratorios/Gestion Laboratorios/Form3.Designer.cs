@@ -33,7 +33,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -44,6 +43,9 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.CmdBuscar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Laboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Disponibilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -62,8 +64,15 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
             this.dataGridView1.Location = new System.Drawing.Point(2, 2);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Laboratorio,
+            this.Disponibilidad});
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+>>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -86,12 +95,22 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DisplayMember = "campus";
             this.comboBox1.FormattingEnabled = true;
+<<<<<<< HEAD
             this.comboBox1.Location = new System.Drawing.Point(68, 15);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.comboBox1.Items.AddRange(new object[] {
+            "01 - Gomez",
+            "02 - Cafan",
+            "03 - Cibao"});
+            this.comboBox1.Location = new System.Drawing.Point(90, 19);
+>>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(169, 21);
             this.comboBox1.TabIndex = 2;
+<<<<<<< HEAD
             // 
             // label2
             // 
@@ -103,12 +122,25 @@
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Aula:";
+=======
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+>>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+<<<<<<< HEAD
             this.comboBox2.Location = new System.Drawing.Point(68, 62);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.comboBox2.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05"});
+            this.comboBox2.Location = new System.Drawing.Point(90, 76);
+>>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(169, 21);
             this.comboBox2.TabIndex = 5;
@@ -127,10 +159,16 @@
             // 
             // dateTimePicker1
             // 
+<<<<<<< HEAD
             this.dateTimePicker1.Location = new System.Drawing.Point(339, 17);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
+=======
+            this.dateTimePicker1.Location = new System.Drawing.Point(470, 21);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(227, 22);
+>>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
             this.dateTimePicker1.TabIndex = 7;
             // 
             // label4
@@ -147,10 +185,32 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
+<<<<<<< HEAD
             this.comboBox3.Location = new System.Drawing.Point(352, 62);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(138, 21);
+=======
+            this.comboBox3.Items.AddRange(new object[] {
+            "07:00 AM",
+            "08:00 AM",
+            "09:00 AM",
+            "10:00 AM",
+            "11:00 AM",
+            "12:00 PM",
+            "01:00 PM",
+            "02:00 PM",
+            "03:00 PM",
+            "04:00 PM",
+            "05:00 PM",
+            "06:00 PM",
+            "07:00 PM",
+            "08:00 PM",
+            "09:00 PM"});
+            this.comboBox3.Location = new System.Drawing.Point(470, 72);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(227, 24);
+>>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
             this.comboBox3.TabIndex = 9;
             // 
             // label5
@@ -167,10 +227,31 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
+<<<<<<< HEAD
             this.comboBox4.Location = new System.Drawing.Point(352, 99);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(138, 21);
+=======
+            this.comboBox4.Items.AddRange(new object[] {
+            "08:00 AM",
+            "09:00 AM",
+            "10:00 AM",
+            "11:00 AM",
+            "12:00 PM",
+            "01:00 PM",
+            "02:00 PM",
+            "03:00 PM",
+            "04:00 PM",
+            "05:00 PM",
+            "06:00 PM",
+            "07:00 PM",
+            "08:00 PM",
+            "09:00 PM"});
+            this.comboBox4.Location = new System.Drawing.Point(470, 122);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(227, 24);
+>>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
             this.comboBox4.TabIndex = 11;
             // 
             // button2
@@ -196,25 +277,59 @@
             this.CmdBuscar.UseVisualStyleBackColor = true;
             this.CmdBuscar.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 85);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 17);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Edifico:";
+            // 
+            // Laboratorio
+            // 
+            this.Laboratorio.DataPropertyName = "0102";
+            this.Laboratorio.HeaderText = "Laboratorio";
+            this.Laboratorio.MinimumWidth = 6;
+            this.Laboratorio.Name = "Laboratorio";
+            this.Laboratorio.ReadOnly = true;
+            this.Laboratorio.Width = 125;
+            // 
+            // Disponibilidad
+            // 
+            this.Disponibilidad.HeaderText = "Disponibilidad";
+            this.Disponibilidad.MinimumWidth = 6;
+            this.Disponibilidad.Name = "Disponibilidad";
+            this.Disponibilidad.ReadOnly = true;
+            this.Disponibilidad.Width = 125;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(689, 396);
+=======
+            this.ClientSize = new System.Drawing.Size(919, 488);
+            this.Controls.Add(this.label6);
+>>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.CmdBuscar);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.Controls.Add(this.comboBox3);
+>>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
             this.Name = "Form3";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
@@ -232,7 +347,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button CmdBuscar;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -242,5 +356,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Laboratorio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Disponibilidad;
     }
 }

@@ -58,6 +58,14 @@ namespace Gestion_Laboratorios
 
         }
 
+<<<<<<< HEAD
+=======
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+>>>>>>> 4f204f11851962756d8e59190cbb4ee93b381936
         private void Form3_Load(object sender, EventArgs e)
         {
 
