@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Laboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +68,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Laboratorio,
             this.Disponibilidad});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 23);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 3);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -233,18 +234,18 @@
             this.button2.Location = new System.Drawing.Point(746, 85);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 52);
+            this.button2.Size = new System.Drawing.Size(51, 51);
             this.button2.TabIndex = 12;
             this.button2.UseVisualStyleBackColor = true;
             // 
             // CmdBuscar
             // 
-            this.CmdBuscar.BackgroundImage = global::Gestion_Laboratorios.Properties.Resources.untitled;
+            this.CmdBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CmdBuscar.BackgroundImage")));
             this.CmdBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CmdBuscar.Location = new System.Drawing.Point(746, 15);
             this.CmdBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.CmdBuscar.Name = "CmdBuscar";
-            this.CmdBuscar.Size = new System.Drawing.Size(80, 52);
+            this.CmdBuscar.Size = new System.Drawing.Size(51, 51);
             this.CmdBuscar.TabIndex = 3;
             this.CmdBuscar.UseVisualStyleBackColor = true;
             this.CmdBuscar.Click += new System.EventHandler(this.button1_Click_1);
@@ -279,7 +280,7 @@
             this.Controls.Add(this.comboBox3);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "Gestion de Campus";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

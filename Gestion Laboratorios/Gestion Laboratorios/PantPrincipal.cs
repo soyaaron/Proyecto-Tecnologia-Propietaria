@@ -72,7 +72,7 @@ namespace Gestion_Laboratorios
             reserva.Usuario = row.Cells[2].Value.ToString();
 
             FrmReservacion frmRes = new FrmReservacion();
-         //   frmRes.reserva = reserva;
+           frmRes.reserva = reserva;
             frmRes.ShowDialog();
 
         }

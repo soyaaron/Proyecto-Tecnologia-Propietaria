@@ -26,7 +26,6 @@ namespace Gestion_Laboratorios
             if (reserva != null)
             {
                 txtUsuario.Text = reserva.Usuario.ToString();
-                txtN_Reservacion.Text = reserva.N_Reservacion.ToString();
                 txtEmpleado.Text = reserva.Empleado.ToString();
                 fexhaReserva.Text = reserva.FechaReservacion.ToString();
                 txtCantidadHoras.Text = reserva.Cantidad_horas.ToString();
