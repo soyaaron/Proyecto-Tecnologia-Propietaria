@@ -1,6 +1,6 @@
 ﻿namespace Gestion_Laboratorios
 {
-    partial class FrmReservar
+    partial class FrmReservacion
     {
         /// <summary>
         /// Required designer variable.
@@ -159,7 +159,7 @@
             this.txtCantidadHoras.Size = new System.Drawing.Size(100, 20);
             this.txtCantidadHoras.TabIndex = 13;
             // 
-            // FrmReservar
+            // FrmReservacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,8 +178,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "FrmReservar";
+            this.Name = "FrmReservacion";
             this.Text = "Reservar";
+            this.Load += new System.EventHandler(this.FrmReservar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
