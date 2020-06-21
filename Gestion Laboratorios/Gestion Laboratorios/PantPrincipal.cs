@@ -35,7 +35,7 @@ namespace Gestion_Laboratorios
 
         private void ClickGestionCampus(object sender, EventArgs e)
         {
-            Form3 f3 = new Form3();
+            Gestion_de_Campus f3 = new Gestion_de_Campus();
             f3.Show();
         }
 
