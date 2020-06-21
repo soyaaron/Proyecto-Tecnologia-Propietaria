@@ -58,10 +58,12 @@ namespace Gestion_Laboratorios
 
         }
 
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
 
         private void Form3_Load(object sender, EventArgs e)
         {

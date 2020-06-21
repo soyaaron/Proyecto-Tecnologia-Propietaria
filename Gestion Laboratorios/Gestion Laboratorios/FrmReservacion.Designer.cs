@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtN_Reservacion = new System.Windows.Forms.TextBox();
             this.txtEmpleado = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.fexhaReserva = new System.Windows.Forms.DateTimePicker();
@@ -44,19 +42,10 @@
             this.txtCantidadHoras = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "No. Reserva";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 56);
+            this.label2.Location = new System.Drawing.Point(34, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 1;
@@ -65,7 +54,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 166);
+            this.label3.Location = new System.Drawing.Point(34, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 2;
@@ -74,7 +63,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 117);
+            this.label4.Location = new System.Drawing.Point(12, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 13);
             this.label4.TabIndex = 3;
@@ -83,43 +72,36 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 88);
+            this.label5.Location = new System.Drawing.Point(34, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Usuario";
             // 
-            // txtN_Reservacion
-            // 
-            this.txtN_Reservacion.Location = new System.Drawing.Point(147, 29);
-            this.txtN_Reservacion.Name = "txtN_Reservacion";
-            this.txtN_Reservacion.Size = new System.Drawing.Size(100, 20);
-            this.txtN_Reservacion.TabIndex = 5;
-            // 
             // txtEmpleado
             // 
-            this.txtEmpleado.Location = new System.Drawing.Point(147, 56);
+            this.txtEmpleado.Location = new System.Drawing.Point(147, 31);
             this.txtEmpleado.Name = "txtEmpleado";
             this.txtEmpleado.Size = new System.Drawing.Size(100, 20);
             this.txtEmpleado.TabIndex = 6;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(147, 85);
+            this.txtUsuario.Location = new System.Drawing.Point(147, 60);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 7;
             // 
             // fexhaReserva
             // 
-            this.fexhaReserva.Location = new System.Drawing.Point(147, 111);
+            this.fexhaReserva.Location = new System.Drawing.Point(147, 86);
             this.fexhaReserva.Name = "fexhaReserva";
             this.fexhaReserva.Size = new System.Drawing.Size(200, 20);
             this.fexhaReserva.TabIndex = 8;
             // 
             // txtComentario
             // 
-            this.txtComentario.Location = new System.Drawing.Point(147, 163);
+            this.txtComentario.Location = new System.Drawing.Point(147, 138);
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.Size = new System.Drawing.Size(200, 67);
             this.txtComentario.TabIndex = 9;
@@ -133,6 +115,7 @@
             this.BtnGuardarReserva.TabIndex = 10;
             this.BtnGuardarReserva.Text = "Guardar";
             this.BtnGuardarReserva.UseVisualStyleBackColor = true;
+            this.BtnGuardarReserva.Click += new System.EventHandler(this.BtnGuardarReserva_Click);
             // 
             // BtnCancelarReserva
             // 
@@ -146,7 +129,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 140);
+            this.label6.Location = new System.Drawing.Point(14, 115);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 13);
             this.label6.TabIndex = 12;
@@ -154,7 +137,7 @@
             // 
             // txtCantidadHoras
             // 
-            this.txtCantidadHoras.Location = new System.Drawing.Point(147, 137);
+            this.txtCantidadHoras.Location = new System.Drawing.Point(147, 112);
             this.txtCantidadHoras.Name = "txtCantidadHoras";
             this.txtCantidadHoras.Size = new System.Drawing.Size(100, 20);
             this.txtCantidadHoras.TabIndex = 13;
@@ -172,12 +155,10 @@
             this.Controls.Add(this.fexhaReserva);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtEmpleado);
-            this.Controls.Add(this.txtN_Reservacion);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "FrmReservacion";
             this.Text = "Reservar";
             this.Load += new System.EventHandler(this.FrmReservar_Load);
@@ -187,13 +168,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtN_Reservacion;
         private System.Windows.Forms.TextBox txtEmpleado;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.DateTimePicker fexhaReserva;
