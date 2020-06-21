@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Gestion_Laboratorios
 {
-    public partial class Form5 : Form
+    public partial class FrmAula : Form
     {
-        public Form5()
+        public FrmAula()
         {
             InitializeComponent();
         }
