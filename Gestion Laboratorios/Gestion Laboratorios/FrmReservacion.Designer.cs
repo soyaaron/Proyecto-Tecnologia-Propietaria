@@ -133,6 +133,7 @@
             this.BtnGuardarReserva.TabIndex = 10;
             this.BtnGuardarReserva.Text = "Guardar";
             this.BtnGuardarReserva.UseVisualStyleBackColor = true;
+            this.BtnGuardarReserva.Click += new System.EventHandler(this.BtnGuardarReserva_Click);
             // 
             // BtnCancelarReserva
             // 

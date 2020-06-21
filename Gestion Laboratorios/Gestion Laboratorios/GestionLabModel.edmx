@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ReservModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Reservacion">
+          <Key>
+            <PropertyRef Name="N_Reservacion" />
+          </Key>
+          <Property Name="N_Reservacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empleado" Type="varchar" MaxLength="50" />
+          <Property Name="Aula" Type="int" />
+          <Property Name="Usuario" Type="varchar" MaxLength="50" />
+          <Property Name="FechaReservacion" Type="date" />
+          <Property Name="Cantidad_horas" Type="time" Precision="7" />
+          <Property Name="Comentario" Type="varchar" MaxLength="50" />
+          <Property Name="Estado" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="ReservModelStoreContainer">
+          <EntitySet Name="Reservacion" EntityType="Self.Reservacion" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ReservModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Reservacion">
+          <Key>
+            <PropertyRef Name="N_Reservacion" />
+          </Key>
+          <Property Name="N_Reservacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Empleado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aula" Type="Int32" />
+          <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReservacion" Type="DateTime" Precision="0" />
+          <Property Name="Cantidad_horas" Type="Time" Precision="7" />
+          <Property Name="Comentario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="ReservEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Reservacion" EntityType="Self.Reservacion" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ReservModelStoreContainer" CdmEntityContainer="ReservEntities">
+          <EntitySetMapping Name="Reservacion">
+            <EntityTypeMapping TypeName="ReservModel.Reservacion">
+              <MappingFragment StoreEntitySet="Reservacion">
+                <ScalarProperty Name="N_Reservacion" ColumnName="N_Reservacion" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Aula" ColumnName="Aula" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="FechaReservacion" ColumnName="FechaReservacion" />
+                <ScalarProperty Name="Cantidad_horas" ColumnName="Cantidad_horas" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
