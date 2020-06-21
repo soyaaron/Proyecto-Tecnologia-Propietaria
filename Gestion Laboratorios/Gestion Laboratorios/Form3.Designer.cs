@@ -44,6 +44,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.CmdBuscar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.Laboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Disponibilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +63,9 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Laboratorio,
+            this.Disponibilidad});
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -83,6 +88,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DisplayMember = "campus";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "01 - Gomez",
@@ -224,6 +230,23 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Edifico:";
             // 
+            // Laboratorio
+            // 
+            this.Laboratorio.DataPropertyName = "0102";
+            this.Laboratorio.HeaderText = "Laboratorio";
+            this.Laboratorio.MinimumWidth = 6;
+            this.Laboratorio.Name = "Laboratorio";
+            this.Laboratorio.ReadOnly = true;
+            this.Laboratorio.Width = 125;
+            // 
+            // Disponibilidad
+            // 
+            this.Disponibilidad.HeaderText = "Disponibilidad";
+            this.Disponibilidad.MinimumWidth = 6;
+            this.Disponibilidad.Name = "Disponibilidad";
+            this.Disponibilidad.ReadOnly = true;
+            this.Disponibilidad.Width = 125;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -269,5 +292,7 @@
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Laboratorio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Disponibilidad;
     }
 }
