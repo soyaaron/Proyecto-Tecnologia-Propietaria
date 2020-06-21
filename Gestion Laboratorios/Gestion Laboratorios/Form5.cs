@@ -21,5 +21,10 @@ namespace Gestion_Laboratorios
         {
 
         }
+
+        private void d(object sender, EventArgs e)
+        {
+
+        }
     }
 }

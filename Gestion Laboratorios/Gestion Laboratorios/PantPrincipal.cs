@@ -90,5 +90,11 @@ namespace Gestion_Laboratorios
             frmRes.reserva = reserva;
             frmRes.ShowDialog();
         }
+
+        private void DirigirGestionUsuario(object sender, EventArgs e)
+        {
+            Gestions_Usuarios gestuser = new Gestions_Usuarios();
+            gestuser.ShowDialog();
+        }
     }
 }
