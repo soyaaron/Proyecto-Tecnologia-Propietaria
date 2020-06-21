@@ -138,15 +138,23 @@
             // 
             // comboBox3
             // 
-            this.comboBox3.Enabled = false;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
+            "07:00 AM",
+            "08:00 AM",
+            "09:00 AM",
+            "10:00 AM",
+            "11:00 AM",
+            "12:00 PM",
             "01:00 PM",
             "02:00 PM",
             "03:00 PM",
             "04:00 PM",
             "05:00 PM",
-            "06:00 PM"});
+            "06:00 PM",
+            "07:00 PM",
+            "08:00 PM",
+            "09:00 PM"});
             this.comboBox3.Location = new System.Drawing.Point(470, 72);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(227, 24);
@@ -164,15 +172,22 @@
             // 
             // comboBox4
             // 
-            this.comboBox4.Enabled = false;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
+            "08:00 AM",
+            "09:00 AM",
+            "10:00 AM",
+            "11:00 AM",
+            "12:00 PM",
             "01:00 PM",
             "02:00 PM",
             "03:00 PM",
             "04:00 PM",
             "05:00 PM",
-            "06:00 PM"});
+            "06:00 PM",
+            "07:00 PM",
+            "08:00 PM",
+            "09:00 PM"});
             this.comboBox4.Location = new System.Drawing.Point(470, 122);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(227, 24);
@@ -218,7 +233,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label3);
@@ -227,6 +241,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.comboBox3);
             this.Name = "Form3";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
