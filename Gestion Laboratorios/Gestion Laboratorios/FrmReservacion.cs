@@ -13,7 +13,7 @@ namespace Gestion_Laboratorios
 {
     public partial class FrmReservacion : Form
     {
-        public TblReservaciones reservaciones { get; set; }
+       // public TblReservaciones reservaciones { get; set; }
         private Gestion_laboratoriosEntities entities = new Gestion_laboratoriosEntities();
 
         public FrmReservacion()
