@@ -16,5 +16,10 @@ namespace Gestion_Laboratorios
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
