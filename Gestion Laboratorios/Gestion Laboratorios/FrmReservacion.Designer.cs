@@ -40,12 +40,14 @@
             this.BtnCancelarReserva = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtCantidadHoras = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbxAulaReserv = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 31);
+            this.label2.Location = new System.Drawing.Point(34, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 1;
@@ -54,7 +56,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 141);
+            this.label3.Location = new System.Drawing.Point(34, 161);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 2;
@@ -63,7 +65,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 92);
+            this.label4.Location = new System.Drawing.Point(34, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 13);
             this.label4.TabIndex = 3;
@@ -72,7 +74,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 63);
+            this.label5.Location = new System.Drawing.Point(34, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 4;
@@ -80,28 +82,28 @@
             // 
             // txtEmpleado
             // 
-            this.txtEmpleado.Location = new System.Drawing.Point(147, 31);
+            this.txtEmpleado.Location = new System.Drawing.Point(167, 21);
             this.txtEmpleado.Name = "txtEmpleado";
             this.txtEmpleado.Size = new System.Drawing.Size(100, 20);
             this.txtEmpleado.TabIndex = 6;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(147, 60);
+            this.txtUsuario.Location = new System.Drawing.Point(167, 50);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 7;
             // 
             // fexhaReserva
             // 
-            this.fexhaReserva.Location = new System.Drawing.Point(147, 86);
+            this.fexhaReserva.Location = new System.Drawing.Point(167, 76);
             this.fexhaReserva.Name = "fexhaReserva";
             this.fexhaReserva.Size = new System.Drawing.Size(200, 20);
             this.fexhaReserva.TabIndex = 8;
             // 
             // txtComentario
             // 
-            this.txtComentario.Location = new System.Drawing.Point(147, 138);
+            this.txtComentario.Location = new System.Drawing.Point(167, 156);
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.Size = new System.Drawing.Size(200, 67);
             this.txtComentario.TabIndex = 9;
@@ -129,7 +131,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 115);
+            this.label6.Location = new System.Drawing.Point(34, 105);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 13);
             this.label6.TabIndex = 12;
@@ -137,16 +139,40 @@
             // 
             // txtCantidadHoras
             // 
-            this.txtCantidadHoras.Location = new System.Drawing.Point(147, 112);
+            this.txtCantidadHoras.Location = new System.Drawing.Point(167, 102);
             this.txtCantidadHoras.Name = "txtCantidadHoras";
             this.txtCantidadHoras.Size = new System.Drawing.Size(100, 20);
             this.txtCantidadHoras.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Aula";
+            // 
+            // cbxAulaReserv
+            // 
+            this.cbxAulaReserv.FormattingEnabled = true;
+            this.cbxAulaReserv.Items.AddRange(new object[] {
+            "LAB-A",
+            "LAB-B",
+            "LAB-C"});
+            this.cbxAulaReserv.Location = new System.Drawing.Point(167, 129);
+            this.cbxAulaReserv.Name = "cbxAulaReserv";
+            this.cbxAulaReserv.Size = new System.Drawing.Size(121, 21);
+            this.cbxAulaReserv.TabIndex = 15;
+            this.cbxAulaReserv.SelectedIndexChanged += new System.EventHandler(this.CbxAulaReserv_SelectedIndexChanged);
             // 
             // FrmReservacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 316);
+            this.Controls.Add(this.cbxAulaReserv);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCantidadHoras);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.BtnCancelarReserva);
@@ -180,5 +206,7 @@
         private System.Windows.Forms.Button BtnCancelarReserva;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtCantidadHoras;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbxAulaReserv;
     }
 }
