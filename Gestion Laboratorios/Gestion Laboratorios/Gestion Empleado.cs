@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace Gestion_Laboratorios
 {
-    public partial class Gestions_Usuarios : Form
+    public partial class Form5 : Form
     {
-        public Gestions_Usuarios()
+        public Form5()
         {
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void d(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
