@@ -79,11 +79,11 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="FrmAula.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="FrmAula.Designer.cs">
+      <DependentUpon>FrmAula.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmReservacion.cs">
       <SubType>Form</SubType>
@@ -149,8 +149,8 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAula.resx">
+      <DependentUpon>FrmAula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReservacion.resx">
       <DependentUpon>FrmReservacion.cs</DependentUpon>
