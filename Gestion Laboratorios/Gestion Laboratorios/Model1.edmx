@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Aula">
           <Key>
             <PropertyRef Name="IdAula" />
@@ -52,7 +52,7 @@
           </Key>
           <Property Name="N_Reservacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Empleado" Type="varchar" MaxLength="50" />
-          <Property Name="Aula" Type="int" />
+          <Property Name="Aula" Type="varchar" MaxLength="10" />
           <Property Name="Usuario" Type="varchar" MaxLength="50" />
           <Property Name="FechaReservacion" Type="date" />
           <Property Name="Cantidad_horas" Type="time" Precision="7" />
@@ -120,8 +120,7 @@
             <End Role="Edificios" EntitySet="Edificios" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -175,7 +174,7 @@
           </Key>
           <Property Name="N_Reservacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Empleado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Aula" Type="Int32" />
+          <Property Name="Aula" Type="String" FixedLength="false" MaxLength="10" Unicode="false" />
           <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="FechaReservacion" Type="DateTime" Precision="0" />
           <Property Name="Cantidad_horas" Type="Time" Precision="7" />
@@ -298,9 +297,9 @@
           <EntitySetMapping Name="Reservacion">
             <EntityTypeMapping TypeName="GLModel.Reservacion">
               <MappingFragment StoreEntitySet="Reservacion">
+                <ScalarProperty Name="Aula" ColumnName="Aula" />
                 <ScalarProperty Name="N_Reservacion" ColumnName="N_Reservacion" />
                 <ScalarProperty Name="Empleado" ColumnName="Empleado" />
-                <ScalarProperty Name="Aula" ColumnName="Aula" />
                 <ScalarProperty Name="Usuario" ColumnName="Usuario" />
                 <ScalarProperty Name="FechaReservacion" ColumnName="FechaReservacion" />
                 <ScalarProperty Name="Cantidad_horas" ColumnName="Cantidad_horas" />

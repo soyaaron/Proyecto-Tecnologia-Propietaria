@@ -26,5 +26,11 @@ namespace Gestion_Laboratorios
         }
     
         public virtual DbSet<Reservacion> Reservacion { get; set; }
+        public virtual DbSet<Aula> Aula { get; set; }
+        public virtual DbSet<Campus> Campus { get; set; }
+        public virtual DbSet<Edificios> Edificios { get; set; }
+        public virtual DbSet<Empleado> Empleado { get; set; }
+        public virtual DbSet<TipoAula> TipoAula { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
     }
 }

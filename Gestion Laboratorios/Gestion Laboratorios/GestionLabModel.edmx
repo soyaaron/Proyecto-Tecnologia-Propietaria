@@ -4,25 +4,123 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ReservModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ReservModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Aula">
+          <Key>
+            <PropertyRef Name="IdAula" />
+          </Key>
+          <Property Name="IdAula" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="IdTipoAula" Type="int" />
+          <Property Name="IdEdificio" Type="int" />
+          <Property Name="Capacidad" Type="int" />
+          <Property Name="CuposReservados" Type="int" />
+          <Property Name="Estado" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Campus">
+          <Key>
+            <PropertyRef Name="IdCampus" />
+          </Key>
+          <Property Name="IdCampus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Estado" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Edificios">
+          <Key>
+            <PropertyRef Name="IdEdificio" />
+          </Key>
+          <Property Name="IdEdificio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="IdCampus" Type="int" />
+          <Property Name="Estado" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="Id_Empleado" />
+          </Key>
+          <Property Name="Id_Empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" />
+          <Property Name="Cedula" Type="int" />
+          <Property Name="Tanda" Type="varchar" MaxLength="10" />
+          <Property Name="Fechaingreso" Type="date" />
+          <Property Name="Estado" Type="varchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="Reservacion">
           <Key>
             <PropertyRef Name="N_Reservacion" />
           </Key>
           <Property Name="N_Reservacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Empleado" Type="varchar" MaxLength="50" />
-          <Property Name="Aula" Type="int" />
+          <Property Name="Aula" Type="varchar" MaxLength="10" />
           <Property Name="Usuario" Type="varchar" MaxLength="50" />
           <Property Name="FechaReservacion" Type="date" />
           <Property Name="Cantidad_horas" Type="time" Precision="7" />
           <Property Name="Comentario" Type="varchar" MaxLength="50" />
           <Property Name="Estado" Type="varchar" MaxLength="20" />
         </EntityType>
+        <EntityType Name="TipoAula">
+          <Key>
+            <PropertyRef Name="IdTipoAula" />
+          </Key>
+          <Property Name="IdTipoAula" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Estado" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" />
+          <Property Name="Cedula" Type="int" />
+          <Property Name="NCarnet" Type="int" />
+          <Property Name="TipoUsuario" Type="int" />
+          <Property Name="Estado" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK__Aula__IdTipoAula__3E52440B">
+          <End Role="TipoAula" Type="Self.TipoAula" Multiplicity="0..1" />
+          <End Role="Aula" Type="Self.Aula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoAula">
+              <PropertyRef Name="IdTipoAula" />
+            </Principal>
+            <Dependent Role="Aula">
+              <PropertyRef Name="IdTipoAula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Edificios__IdCam__398D8EEE">
+          <End Role="Campus" Type="Self.Campus" Multiplicity="0..1" />
+          <End Role="Edificios" Type="Self.Edificios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campus">
+              <PropertyRef Name="IdCampus" />
+            </Principal>
+            <Dependent Role="Edificios">
+              <PropertyRef Name="IdCampus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ReservModelStoreContainer">
+          <EntitySet Name="Aula" EntityType="Self.Aula" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Campus" EntityType="Self.Campus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Edificios" EntityType="Self.Edificios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reservacion" EntityType="Self.Reservacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoAula" EntityType="Self.TipoAula" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Aula__IdTipoAula__3E52440B" Association="Self.FK__Aula__IdTipoAula__3E52440B">
+            <End Role="TipoAula" EntitySet="TipoAula" />
+            <End Role="Aula" EntitySet="Aula" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Edificios__IdCam__398D8EEE" Association="Self.FK__Edificios__IdCam__398D8EEE">
+            <End Role="Campus" EntitySet="Campus" />
+            <End Role="Edificios" EntitySet="Edificios" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ReservModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -32,7 +130,7 @@
           </Key>
           <Property Name="N_Reservacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Empleado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Aula" Type="Int32" />
+          <Property Name="Aula" Type="String" FixedLength="true" MaxLength="30" />
           <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="FechaReservacion" Type="DateTime" Precision="0" />
           <Property Name="Cantidad_horas" Type="Time" Precision="7" />
@@ -41,7 +139,110 @@
         </EntityType>
         <EntityContainer Name="ReservEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Reservacion" EntityType="Self.Reservacion" />
+          <EntitySet Name="Aula" EntityType="ReservModel.Aula" />
+          <EntitySet Name="Campus" EntityType="ReservModel.Campus" />
+          <EntitySet Name="Edificios" EntityType="ReservModel.Edificios" />
+          <EntitySet Name="Empleado" EntityType="ReservModel.Empleado" />
+          <EntitySet Name="TipoAula" EntityType="ReservModel.TipoAula" />
+          <EntitySet Name="Usuario" EntityType="ReservModel.Usuario" />
+          <AssociationSet Name="FK__Aula__IdTipoAula__3E52440B" Association="ReservModel.FK__Aula__IdTipoAula__3E52440B">
+            <End Role="TipoAula" EntitySet="TipoAula" />
+            <End Role="Aula" EntitySet="Aula" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Edificios__IdCam__398D8EEE" Association="ReservModel.FK__Edificios__IdCam__398D8EEE">
+            <End Role="Campus" EntitySet="Campus" />
+            <End Role="Edificios" EntitySet="Edificios" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Aula">
+          <Key>
+            <PropertyRef Name="IdAula" />
+          </Key>
+          <Property Name="IdAula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdTipoAula" Type="Int32" />
+          <Property Name="IdEdificio" Type="Int32" />
+          <Property Name="Capacidad" Type="Int32" />
+          <Property Name="CuposReservados" Type="Int32" />
+          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TipoAula" Relationship="ReservModel.FK__Aula__IdTipoAula__3E52440B" FromRole="Aula" ToRole="TipoAula" />
+        </EntityType>
+        <EntityType Name="Campus">
+          <Key>
+            <PropertyRef Name="IdCampus" />
+          </Key>
+          <Property Name="IdCampus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Edificios" Relationship="ReservModel.FK__Edificios__IdCam__398D8EEE" FromRole="Campus" ToRole="Edificios" />
+        </EntityType>
+        <EntityType Name="Edificios">
+          <Key>
+            <PropertyRef Name="IdEdificio" />
+          </Key>
+          <Property Name="IdEdificio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdCampus" Type="Int32" />
+          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Campus" Relationship="ReservModel.FK__Edificios__IdCam__398D8EEE" FromRole="Edificios" ToRole="Campus" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="Id_Empleado" />
+          </Key>
+          <Property Name="Id_Empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cedula" Type="Int32" />
+          <Property Name="Tanda" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Fechaingreso" Type="DateTime" Precision="0" />
+          <Property Name="Estado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TipoAula">
+          <Key>
+            <PropertyRef Name="IdTipoAula" />
+          </Key>
+          <Property Name="IdTipoAula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Aula" Relationship="ReservModel.FK__Aula__IdTipoAula__3E52440B" FromRole="TipoAula" ToRole="Aula" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cedula" Type="Int32" />
+          <Property Name="NCarnet" Type="Int32" />
+          <Property Name="TipoUsuario" Type="Int32" />
+          <Property Name="Estado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK__Aula__IdTipoAula__3E52440B">
+          <End Type="ReservModel.TipoAula" Role="TipoAula" Multiplicity="0..1" />
+          <End Type="ReservModel.Aula" Role="Aula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoAula">
+              <PropertyRef Name="IdTipoAula" />
+            </Principal>
+            <Dependent Role="Aula">
+              <PropertyRef Name="IdTipoAula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Edificios__IdCam__398D8EEE">
+          <End Type="ReservModel.Campus" Role="Campus" Multiplicity="0..1" />
+          <End Type="ReservModel.Edificios" Role="Edificios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campus">
+              <PropertyRef Name="IdCampus" />
+            </Principal>
+            <Dependent Role="Edificios">
+              <PropertyRef Name="IdCampus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -59,6 +260,73 @@
                 <ScalarProperty Name="Cantidad_horas" ColumnName="Cantidad_horas" />
                 <ScalarProperty Name="Comentario" ColumnName="Comentario" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Aula">
+            <EntityTypeMapping TypeName="ReservModel.Aula">
+              <MappingFragment StoreEntitySet="Aula">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="CuposReservados" ColumnName="CuposReservados" />
+                <ScalarProperty Name="Capacidad" ColumnName="Capacidad" />
+                <ScalarProperty Name="IdEdificio" ColumnName="IdEdificio" />
+                <ScalarProperty Name="IdTipoAula" ColumnName="IdTipoAula" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdAula" ColumnName="IdAula" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Campus">
+            <EntityTypeMapping TypeName="ReservModel.Campus">
+              <MappingFragment StoreEntitySet="Campus">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdCampus" ColumnName="IdCampus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Edificios">
+            <EntityTypeMapping TypeName="ReservModel.Edificios">
+              <MappingFragment StoreEntitySet="Edificios">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="IdCampus" ColumnName="IdCampus" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdEdificio" ColumnName="IdEdificio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleado">
+            <EntityTypeMapping TypeName="ReservModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleado">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Fechaingreso" ColumnName="Fechaingreso" />
+                <ScalarProperty Name="Tanda" ColumnName="Tanda" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoAula">
+            <EntityTypeMapping TypeName="ReservModel.TipoAula">
+              <MappingFragment StoreEntitySet="TipoAula">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdTipoAula" ColumnName="IdTipoAula" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="ReservModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+                <ScalarProperty Name="NCarnet" ColumnName="NCarnet" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
