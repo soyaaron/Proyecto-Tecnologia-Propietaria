@@ -45,10 +45,11 @@ namespace Gestion_Laboratorios
                     //N_Reservacion = txtN_Reservacion.Text,
                     Empleado = txtEmpleado.Text,
                     Usuario = txtUsuario.Text,
+                    Aula = cbxAulaReserv.Text,
                     //FechaReservacion = txtUsuario=fexhaReserva,
                     //Cantidad_horas = txtCantidadHoras.Text
                     Comentario = txtComentario.Text
-                });
+                }); 
             entities.SaveChanges();
             MessageBox.Show("Reserva guarada con exito");
             this.Close();
