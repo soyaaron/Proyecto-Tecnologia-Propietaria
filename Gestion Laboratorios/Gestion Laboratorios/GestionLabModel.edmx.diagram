@@ -6,6 +6,14 @@
     <edmx:Diagrams>
       <Diagram DiagramId="36d26cbc2b8b4840a5ce32bc5244ade2" Name="Diagram1">
         <EntityTypeShape EntityType="ReservModel.Reservacion" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservModel.Aula" Width="1.5" PointX="6" PointY="1" />
+        <EntityTypeShape EntityType="ReservModel.Campus" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="ReservModel.Edificios" Width="1.5" PointX="3" PointY="4.875" />
+        <EntityTypeShape EntityType="ReservModel.Empleado" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ReservModel.TipoAula" Width="1.5" PointX="3.75" PointY="1.375" />
+        <EntityTypeShape EntityType="ReservModel.Usuario" Width="1.5" PointX="0.75" PointY="7.75" />
+        <AssociationConnector Association="ReservModel.FK__Aula__IdTipoAula__3E52440B" />
+        <AssociationConnector Association="ReservModel.FK__Edificios__IdCam__398D8EEE" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
