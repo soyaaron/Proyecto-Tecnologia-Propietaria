@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,6 +43,11 @@
             this.txtCantidadHoras = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxAulaReserv = new System.Windows.Forms.ComboBox();
+            this.gestion_laboratoriosDataSet = new Gestion_Laboratorios.Gestion_laboratoriosDataSet();
+            this.aulaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aulaTableAdapter = new Gestion_Laboratorios.Gestion_laboratoriosDataSetTableAdapters.AulaTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.gestion_laboratoriosDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aulaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -166,6 +172,20 @@
             this.cbxAulaReserv.TabIndex = 15;
             this.cbxAulaReserv.SelectedIndexChanged += new System.EventHandler(this.CbxAulaReserv_SelectedIndexChanged);
             // 
+            // gestion_laboratoriosDataSet
+            // 
+            this.gestion_laboratoriosDataSet.DataSetName = "Gestion_laboratoriosDataSet";
+            this.gestion_laboratoriosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aulaBindingSource
+            // 
+            this.aulaBindingSource.DataMember = "Aula";
+            this.aulaBindingSource.DataSource = this.gestion_laboratoriosDataSet;
+            // 
+            // aulaTableAdapter
+            // 
+            this.aulaTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmReservacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,6 +208,8 @@
             this.Name = "FrmReservacion";
             this.Text = "Reservar";
             this.Load += new System.EventHandler(this.FrmReservar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gestion_laboratoriosDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aulaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,5 +230,8 @@
         private System.Windows.Forms.TextBox txtCantidadHoras;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxAulaReserv;
+        private Gestion_laboratoriosDataSet gestion_laboratoriosDataSet;
+        private System.Windows.Forms.BindingSource aulaBindingSource;
+        private Gestion_laboratoriosDataSetTableAdapters.AulaTableAdapter aulaTableAdapter;
     }
 }

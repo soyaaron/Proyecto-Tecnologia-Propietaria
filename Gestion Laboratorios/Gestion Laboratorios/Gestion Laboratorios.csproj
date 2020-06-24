@@ -56,16 +56,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aula.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GestionLabModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Campus.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GestionLabModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Edificios.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GestionLabModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Empleado.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GestionLabModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -112,6 +112,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GestionLabModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Gestion_laboratoriosDataSet.cs">
+      <DependentUpon>Gestion_laboratoriosDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Gestion_laboratoriosDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -144,10 +147,10 @@
       <DependentUpon>GestionLabModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TipoAula.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GestionLabModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GestionLabModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

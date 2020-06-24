@@ -84,7 +84,7 @@ namespace Gestion_Laboratorios
             reserva.N_Reservacion = Int32.Parse(row.Cells[0].Value.ToString());
             reserva.Empleado = row.Cells[1].Value.ToString();
             reserva.Usuario = row.Cells[2].Value.ToString();
-          //  reserva.Aula = row.Cells[3].Value.ToString();
+            reserva.Aula = row.Cells[3].Value.ToString();
 
             FrmReservacion frmRes = new FrmReservacion();
             frmRes.reserva = reserva;
@@ -95,6 +95,12 @@ namespace Gestion_Laboratorios
         {
             Gestions_Usuarios gestuser = new Gestions_Usuarios();
             gestuser.ShowDialog();
+        }
+
+        private void DirigirGestionEmp(object sender, EventArgs e)
+        {
+            FrmGestionEmp gestemp = new FrmGestionEmp();
+            gestemp.ShowDialog();
         }
     }
 }
