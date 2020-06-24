@@ -23,13 +23,15 @@ namespace Gestion_Laboratorios
 
         private void FrmReservar_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'gestion_laboratoriosDataSet.Aula' table. You can move, or remove it, as needed.
+            this.aulaTableAdapter.Fill(this.gestion_laboratoriosDataSet.Aula);
             if (reserva != null)
             {
                 txtUsuario.Text = reserva.Usuario.ToString();
                 txtEmpleado.Text = reserva.Empleado.ToString();
                 fexhaReserva.Text = reserva.FechaReservacion.ToString();
                 txtCantidadHoras.Text = reserva.Cantidad_horas.ToString();
-              //  cbxAulaReserv.TabIndex = reserva.Aula.ToString(); 
+                cbxAulaReserv.Text = reserva.Aula.ToString(); 
 
 
             }
@@ -43,10 +45,11 @@ namespace Gestion_Laboratorios
                     //N_Reservacion = txtN_Reservacion.Text,
                     Empleado = txtEmpleado.Text,
                     Usuario = txtUsuario.Text,
+                    Aula = cbxAulaReserv.Text,
                     //FechaReservacion = txtUsuario=fexhaReserva,
                     //Cantidad_horas = txtCantidadHoras.Text
                     Comentario = txtComentario.Text
-                });
+                }); 
             entities.SaveChanges();
             MessageBox.Show("Reserva guarada con exito");
             this.Close();

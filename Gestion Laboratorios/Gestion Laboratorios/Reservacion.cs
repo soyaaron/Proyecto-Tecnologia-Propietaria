@@ -16,7 +16,7 @@ namespace Gestion_Laboratorios
     {
         public int N_Reservacion { get; set; }
         public string Empleado { get; set; }
-        public Nullable<int> Aula { get; set; }
+        public string Aula { get; set; }
         public string Usuario { get; set; }
         public Nullable<System.DateTime> FechaReservacion { get; set; }
         public Nullable<System.TimeSpan> Cantidad_horas { get; set; }

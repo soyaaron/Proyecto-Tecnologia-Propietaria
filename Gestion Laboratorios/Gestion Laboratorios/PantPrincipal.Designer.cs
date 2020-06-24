@@ -92,6 +92,7 @@
             this.gestionEmpleadosToolStripMenuItem.Name = "gestionEmpleadosToolStripMenuItem";
             this.gestionEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
             this.gestionEmpleadosToolStripMenuItem.Text = "Gestion Empleados";
+            this.gestionEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.DirigirGestionEmp);
             // 
             // imageList1
             // 
