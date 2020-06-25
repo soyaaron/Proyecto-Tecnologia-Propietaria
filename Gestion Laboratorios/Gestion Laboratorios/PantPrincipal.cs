@@ -33,11 +33,6 @@ namespace Gestion_Laboratorios
             dvgReservaciones.DataSource = entities.Reservacion.ToList();
         }
 
-        private void ClickGestionCampus(object sender, EventArgs e)
-        {
-            Gestion_de_Campus f3 = new Gestion_de_Campus();
-            f3.Show();
-        }
 
         private void btnDirigeAgregarRes(object sender, EventArgs e)
         {
@@ -64,18 +59,6 @@ namespace Gestion_Laboratorios
             consultarReservas();
         }
 
-        private void dgvReserv_DobleClick(object sender,  EventArgs e)
-        {
-            DataGridViewRow row = this.dvgReservaciones.SelectedRows[0];
-            Reservacion reserva = new Reservacion();
-            reserva.N_Reservacion = Int32.Parse(row.Cells[0].Value.ToString());
-            reserva.Usuario = row.Cells[2].Value.ToString();
-
-            FrmReservacion frmRes = new FrmReservacion();
-           frmRes.reserva = reserva;
-            frmRes.ShowDialog();
-
-        }
 
         private void dgvReserv_CellDobleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -91,6 +74,13 @@ namespace Gestion_Laboratorios
             frmRes.ShowDialog();
         }
 
+        private void ClickGestionCampus(object sender, EventArgs e)
+        {
+            Gestion_de_Campus f3 = new Gestion_de_Campus();
+            f3.Show();
+        }
+
+
         private void DirigirGestionUsuario(object sender, EventArgs e)
         {
             Gestions_Usuarios gestuser = new Gestions_Usuarios();
@@ -101,6 +91,12 @@ namespace Gestion_Laboratorios
         {
             FrmGestionEmp gestemp = new FrmGestionEmp();
             gestemp.ShowDialog();
+        }
+
+        private void DirigirGestionAulas(object sender, EventArgs e)
+        {
+            FrmGestionAulas getau = new FrmGestionAulas();
+            getau.ShowDialog();
         }
     }
 }

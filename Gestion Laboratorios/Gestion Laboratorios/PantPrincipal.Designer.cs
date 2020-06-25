@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gestionCampusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,11 +41,11 @@
             this.gestionEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dvgReservaciones = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.BtnBuscarReservas = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgReservaciones)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +82,7 @@
             this.gestionAulasToolStripMenuItem.Name = "gestionAulasToolStripMenuItem";
             this.gestionAulasToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.gestionAulasToolStripMenuItem.Text = "Gestion Aulas";
+            this.gestionAulasToolStripMenuItem.Click += new System.EventHandler(this.DirigirGestionAulas);
             // 
             // gestionUsuariosToolStripMenuItem
             // 
@@ -102,24 +106,36 @@
             // 
             // dvgReservaciones
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgReservaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dvgReservaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dvgReservaciones.DefaultCellStyle = dataGridViewCellStyle2;
             this.dvgReservaciones.Location = new System.Drawing.Point(13, 103);
             this.dvgReservaciones.Name = "dvgReservaciones";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgReservaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dvgReservaciones.Size = new System.Drawing.Size(978, 335);
             this.dvgReservaciones.TabIndex = 1;
             this.dvgReservaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReserv_CellDobleClick);
-            this.dvgReservaciones.DoubleClick += new System.EventHandler(this.dgvReserv_DobleClick);
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(940, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 51);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnDirigeAgregarRes);
             // 
             // label1
             // 
@@ -156,6 +172,17 @@
             this.BtnBuscarReservas.TabIndex = 6;
             this.BtnBuscarReservas.UseVisualStyleBackColor = true;
             this.BtnBuscarReservas.Click += new System.EventHandler(this.BtnBuscarReservas_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(940, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(51, 51);
+            this.button1.TabIndex = 2;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnDirigeAgregarRes);
             // 
             // PantPrincipal
             // 

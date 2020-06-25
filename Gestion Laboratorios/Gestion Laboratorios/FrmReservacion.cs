@@ -30,7 +30,7 @@ namespace Gestion_Laboratorios
                 txtUsuario.Text = reserva.Usuario.ToString();
                 txtEmpleado.Text = reserva.Empleado.ToString();
                 fexhaReserva.Text = reserva.FechaReservacion.ToString();
-                txtCantidadHoras.Text = reserva.Cantidad_horas.ToString();
+              //  txtCantidadHoras.Text = reserva.Cantidad_horas.ToString();
                 cbxAulaReserv.Text = reserva.Aula.ToString(); 
 
 
@@ -39,17 +39,20 @@ namespace Gestion_Laboratorios
 
         private void BtnGuardarReserva_Click(object sender, EventArgs e)
         {
+
+
+
             entities.Reservacion.Add(
                 new Reservacion
                 {
-                    //N_Reservacion = txtN_Reservacion.Text,
                     Empleado = txtEmpleado.Text,
                     Usuario = txtUsuario.Text,
                     Aula = cbxAulaReserv.Text,
-                    //FechaReservacion = txtUsuario=fexhaReserva,
-                    //Cantidad_horas = txtCantidadHoras.Text
+                    FechaReservacion = fexhaReserva.Value,
+                  // Cantidad_horas = dtHorasReserv.,
+                   Estado = cbxEstadoAulaReserv.Text,
                     Comentario = txtComentario.Text
-                }); 
+                }); ; 
             entities.SaveChanges();
             MessageBox.Show("Reserva guarada con exito");
             this.Close();

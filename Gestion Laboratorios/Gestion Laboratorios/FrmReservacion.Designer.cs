@@ -40,12 +40,14 @@
             this.BtnGuardarReserva = new System.Windows.Forms.Button();
             this.BtnCancelarReserva = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtCantidadHoras = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxAulaReserv = new System.Windows.Forms.ComboBox();
             this.gestion_laboratoriosDataSet = new Gestion_Laboratorios.Gestion_laboratoriosDataSet();
             this.aulaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aulaTableAdapter = new Gestion_Laboratorios.Gestion_laboratoriosDataSetTableAdapters.AulaTableAdapter();
+            this.dtHorasReserv = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbxEstadoAulaReserv = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gestion_laboratoriosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aulaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +64,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 161);
+            this.label3.Location = new System.Drawing.Point(34, 211);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 2;
@@ -102,6 +104,7 @@
             // 
             // fexhaReserva
             // 
+            this.fexhaReserva.CustomFormat = "YYYY/mm/dd";
             this.fexhaReserva.Location = new System.Drawing.Point(167, 76);
             this.fexhaReserva.Name = "fexhaReserva";
             this.fexhaReserva.Size = new System.Drawing.Size(200, 20);
@@ -109,7 +112,7 @@
             // 
             // txtComentario
             // 
-            this.txtComentario.Location = new System.Drawing.Point(167, 156);
+            this.txtComentario.Location = new System.Drawing.Point(167, 206);
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.Size = new System.Drawing.Size(200, 67);
             this.txtComentario.TabIndex = 9;
@@ -142,13 +145,6 @@
             this.label6.Size = new System.Drawing.Size(93, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Cantidad de horas";
-            // 
-            // txtCantidadHoras
-            // 
-            this.txtCantidadHoras.Location = new System.Drawing.Point(167, 102);
-            this.txtCantidadHoras.Name = "txtCantidadHoras";
-            this.txtCantidadHoras.Size = new System.Drawing.Size(100, 20);
-            this.txtCantidadHoras.TabIndex = 13;
             // 
             // label1
             // 
@@ -186,14 +182,47 @@
             // 
             this.aulaTableAdapter.ClearBeforeFill = true;
             // 
+            // dtHorasReserv
+            // 
+            this.dtHorasReserv.CustomFormat = "HH:mm:ss";
+            this.dtHorasReserv.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtHorasReserv.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dtHorasReserv.Location = new System.Drawing.Point(167, 99);
+            this.dtHorasReserv.Name = "dtHorasReserv";
+            this.dtHorasReserv.Size = new System.Drawing.Size(100, 20);
+            this.dtHorasReserv.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(34, 167);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Estado";
+            // 
+            // cbxEstadoAulaReserv
+            // 
+            this.cbxEstadoAulaReserv.FormattingEnabled = true;
+            this.cbxEstadoAulaReserv.Items.AddRange(new object[] {
+            "Disponible",
+            "Reservado",
+            "Deshabilitado"});
+            this.cbxEstadoAulaReserv.Location = new System.Drawing.Point(167, 164);
+            this.cbxEstadoAulaReserv.Name = "cbxEstadoAulaReserv";
+            this.cbxEstadoAulaReserv.Size = new System.Drawing.Size(121, 21);
+            this.cbxEstadoAulaReserv.TabIndex = 18;
+            // 
             // FrmReservacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 316);
+            this.Controls.Add(this.cbxEstadoAulaReserv);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dtHorasReserv);
             this.Controls.Add(this.cbxAulaReserv);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCantidadHoras);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.BtnCancelarReserva);
             this.Controls.Add(this.BtnGuardarReserva);
@@ -227,11 +256,13 @@
         private System.Windows.Forms.Button BtnGuardarReserva;
         private System.Windows.Forms.Button BtnCancelarReserva;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtCantidadHoras;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxAulaReserv;
         private Gestion_laboratoriosDataSet gestion_laboratoriosDataSet;
         private System.Windows.Forms.BindingSource aulaBindingSource;
         private Gestion_laboratoriosDataSetTableAdapters.AulaTableAdapter aulaTableAdapter;
+        private System.Windows.Forms.DateTimePicker dtHorasReserv;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbxEstadoAulaReserv;
     }
 }
