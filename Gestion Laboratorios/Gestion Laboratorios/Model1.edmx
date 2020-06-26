@@ -55,7 +55,7 @@
           <Property Name="Aula" Type="varchar" MaxLength="10" />
           <Property Name="Usuario" Type="varchar" MaxLength="50" />
           <Property Name="FechaReservacion" Type="date" />
-          <Property Name="Cantidad_horas" Type="time" Precision="7" />
+          <Property Name="Cantidad_horas" Type="varchar" MaxLength="50" />
           <Property Name="Comentario" Type="varchar" MaxLength="50" />
           <Property Name="Estado" Type="varchar" MaxLength="20" />
         </EntityType>
@@ -177,7 +177,7 @@
           <Property Name="Aula" Type="String" FixedLength="false" MaxLength="10" Unicode="false" />
           <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="FechaReservacion" Type="DateTime" Precision="0" />
-          <Property Name="Cantidad_horas" Type="Time" Precision="7" />
+          <Property Name="Cantidad_horas" Type="String" FixedLength="false" MaxLength="50" Unicode="false" />
           <Property Name="Comentario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>

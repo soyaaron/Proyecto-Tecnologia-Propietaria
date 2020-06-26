@@ -66,12 +66,16 @@ namespace Gestion_Laboratorios
             Reservacion reserva = new Reservacion();
             reserva.N_Reservacion = Int32.Parse(row.Cells[0].Value.ToString());
             reserva.Empleado = row.Cells[1].Value.ToString();
-            reserva.Usuario = row.Cells[2].Value.ToString();
-            reserva.Aula = row.Cells[3].Value.ToString();
+            reserva.Aula = row.Cells[2].Value.ToString();
+            reserva.Usuario = row.Cells[3].Value.ToString();
+            reserva.FechaReservacion = Convert.ToDateTime(row.Cells[4]);
+             reserva.Cantidad_horas = row.Cells[5].Value.ToString();
+            reserva.Comentario = row.Cells[6].Value.ToString();
 
-            FrmReservacion frmRes = new FrmReservacion();
-            frmRes.reserva = reserva;
-            frmRes.ShowDialog();
+
+            FrmReservacion frmres = new FrmReservacion();
+            frmres.reserva = reserva;
+            frmres.ShowDialog();
         }
 
         private void ClickGestionCampus(object sender, EventArgs e)

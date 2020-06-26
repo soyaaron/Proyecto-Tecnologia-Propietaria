@@ -45,7 +45,7 @@
             this.gestion_laboratoriosDataSet = new Gestion_Laboratorios.Gestion_laboratoriosDataSet();
             this.aulaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aulaTableAdapter = new Gestion_Laboratorios.Gestion_laboratoriosDataSetTableAdapters.AulaTableAdapter();
-            this.dtHorasReserv = new System.Windows.Forms.DateTimePicker();
+            this.DTHorasReserva = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.cbxEstadoAulaReserv = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gestion_laboratoriosDataSet)).BeginInit();
@@ -182,15 +182,15 @@
             // 
             this.aulaTableAdapter.ClearBeforeFill = true;
             // 
-            // dtHorasReserv
+            // DTHorasReserva
             // 
-            this.dtHorasReserv.CustomFormat = "HH:mm:ss";
-            this.dtHorasReserv.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtHorasReserv.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtHorasReserv.Location = new System.Drawing.Point(167, 99);
-            this.dtHorasReserv.Name = "dtHorasReserv";
-            this.dtHorasReserv.Size = new System.Drawing.Size(100, 20);
-            this.dtHorasReserv.TabIndex = 16;
+            this.DTHorasReserva.CustomFormat = "HH:mm:ss";
+            this.DTHorasReserva.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.DTHorasReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DTHorasReserva.Location = new System.Drawing.Point(167, 99);
+            this.DTHorasReserva.Name = "DTHorasReserva";
+            this.DTHorasReserva.Size = new System.Drawing.Size(100, 20);
+            this.DTHorasReserva.TabIndex = 16;
             // 
             // label7
             // 
@@ -220,7 +220,7 @@
             this.ClientSize = new System.Drawing.Size(470, 316);
             this.Controls.Add(this.cbxEstadoAulaReserv);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dtHorasReserv);
+            this.Controls.Add(this.DTHorasReserva);
             this.Controls.Add(this.cbxAulaReserv);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
@@ -261,7 +261,7 @@
         private Gestion_laboratoriosDataSet gestion_laboratoriosDataSet;
         private System.Windows.Forms.BindingSource aulaBindingSource;
         private Gestion_laboratoriosDataSetTableAdapters.AulaTableAdapter aulaTableAdapter;
-        private System.Windows.Forms.DateTimePicker dtHorasReserv;
+        private System.Windows.Forms.DateTimePicker DTHorasReserva;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbxEstadoAulaReserv;
     }

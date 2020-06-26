@@ -30,7 +30,9 @@ namespace Gestion_Laboratorios
                 txtUsuario.Text = reserva.Usuario.ToString();
                 txtEmpleado.Text = reserva.Empleado.ToString();
                 fexhaReserva.Text = reserva.FechaReservacion.ToString();
-              //  txtCantidadHoras.Text = reserva.Cantidad_horas.ToString();
+                // NO Encuentro como parsear la hora para que la bd entienda, la bd acepta un dato time 
+                
+                DTHorasReserva.Text = reserva.Cantidad_horas.ToString();
                 cbxAulaReserv.Text = reserva.Aula.ToString(); 
 
 
@@ -49,7 +51,7 @@ namespace Gestion_Laboratorios
                     Usuario = txtUsuario.Text,
                     Aula = cbxAulaReserv.Text,
                     FechaReservacion = fexhaReserva.Value,
-                  // Cantidad_horas = dtHorasReserv.,
+                Cantidad_horas = DTHorasReserva.Text,
                    Estado = cbxEstadoAulaReserv.Text,
                     Comentario = txtComentario.Text
                 }); ; 
