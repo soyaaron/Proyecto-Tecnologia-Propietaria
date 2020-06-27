@@ -65,10 +65,10 @@ namespace Gestion_Laboratorios
                 cbxEstadoAulaReserv.Text = Estado;
                 numNumeroReserv.Enabled = modo.Equals("C");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show("Error al cargar " + ex.Message);
             }
         }
 
@@ -81,20 +81,20 @@ namespace Gestion_Laboratorios
                 if (modo.Equals("C"))
                 {
                     sql = "insert into Reservacion Values ('";
-                    sql += numNumeroReserv.Value + "','" + txtEmpleado.Text + "','" + txtUsuario.Text + "','" + cbxAulaReserv.Text + "','";
-                    sql += fexhaReserva.Text + "','" + DTHorasReserva.Text + "','" + cbxEstadoAulaReserv.Text + "','" + txtComentario.Text + "')";
+                    sql += numNumeroReserv.Value + "','" + txtEmpleado.Text + "','" + cbxAulaReserv.Text + "','" + txtUsuario.Text + "','";
+                    sql += fexhaReserva.Text + "','" + DTHorasReserva.Text + "','" + txtComentario.Text + "','" + cbxEstadoAulaReserv.Text + "')";
                 }
                 else
                 {
-                    sql = "update Reservacion set";
+                    sql = " update Reservacion set ";
 
-                    sql += "Empleado" + txtEmpleado.Text + "','";
-                    sql += "Aula" + txtUsuario.Text + "','";
-                    sql += "Usuario" + cbxAulaReserv.Text + "','";
-                    sql += "FechaReservacion" + fexhaReserva.Value + "','";
-                    sql += "Cantidad_horas" + DTHorasReserva.Text + "','";
-                    sql += "Comentario" + txtComentario.Text + "','";
-                    sql += "Estado" + cbxEstadoAulaReserv.Text + "','";
+                    sql += "Empleado = '" + txtEmpleado.Text + "',";
+                    sql += "Aula = '" + cbxAulaReserv.Text + "',";
+                    sql += "Usuario = '" + txtUsuario.Text + "',";
+                    sql += "FechaReservacion = '" + fexhaReserva.Value + "',";
+                    sql += "Cantidad_horas = '" + DTHorasReserva.Text + "',";
+                    sql += "Estado = '" + cbxEstadoAulaReserv.Text + "',";
+                    sql += "Comentario = '" + txtComentario.Text + "'";                   
                     sql += "where N_Reservacion = '" + numNumeroReserv.Value + "'";
 
                 }
@@ -106,7 +106,7 @@ namespace Gestion_Laboratorios
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error al guardadr" + ex.Message);
+                MessageBox.Show("Error al guardar " + ex.Message);
             }
 
             /*            entities.Reservacion.Add(
@@ -136,8 +136,8 @@ namespace Gestion_Laboratorios
         {
             try
             {
-                string sql = "delte Reservacion";
-                sql += "where N_Reservacion = '"+numNumeroReserv.Value+"'";
+                string sql = "delete Reservacion";
+                sql += " where N_Reservacion = '" +numNumeroReserv.Value+"'";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminiado");
@@ -147,8 +147,13 @@ namespace Gestion_Laboratorios
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error al eliminar" + ex.Message);
+                MessageBox.Show("Error al eliminar " + ex.Message);
             }
+        }
+
+        private void BtnCancelarReserva_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

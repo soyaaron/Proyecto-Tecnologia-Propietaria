@@ -55,7 +55,7 @@ namespace Gestion_Laboratorios
 
         private void BtnBuscarReservas_Click(object sender, EventArgs e)
         {
-            //TODO Reparar busquedas por criterio
+
             consultarReservas();
         }
         private void btnDirigeAgregarRes(object sender, EventArgs e)

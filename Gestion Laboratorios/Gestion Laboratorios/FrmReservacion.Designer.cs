@@ -141,6 +141,7 @@
             this.BtnCancelarReserva.TabIndex = 11;
             this.BtnCancelarReserva.Text = "Cancelar";
             this.BtnCancelarReserva.UseVisualStyleBackColor = true;
+            this.BtnCancelarReserva.Click += new System.EventHandler(this.BtnCancelarReserva_Click);
             // 
             // label6
             // 

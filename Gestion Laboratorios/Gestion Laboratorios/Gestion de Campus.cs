@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,62 +13,58 @@ namespace Gestion_Laboratorios
 {
     public partial class Gestion_de_Campus : Form
     {
+        public SqlConnection con = null;
         public Gestion_de_Campus()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Gestion_de_Campus_Load(object sender, EventArgs e)
         {
-
+            consultarCampus();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnBuscarCampus(object sender, EventArgs e)
         {
-
+            consultarCampus();
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
+        private void consultarCampus() {
+            try
+            {
+                con = new SqlConnection("Data Source=AARONLAPTOP;Initial Catalog=Gestion_laboratorios;Integrated Security=True");
+                con.Open();
+                string sql = "select * from Campus";
+                if (txtBusqCampus.Text.Length > 0) {
 
+                    sql += " where " + txtBusqCampus.Text + " like '% ";
+                    sql += " order by " + txtBusqCampus.Text;
+                }
+                SqlDataAdapter da = new SqlDataAdapter(sql, con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvCampus.DataSource = dt;
+                dgvCampus.Refresh();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al ejecutar consulta: " + ex.Message);
+            }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void BtnAgregarCampus_Click(object sender, EventArgs e)
         {
-
+            FrmAgregarCampus frmcmp = new FrmAgregarCampus();
+            frmcmp.con = con;
+            frmcmp.modo = "C";
+            frmcmp.ShowDialog();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void GestionCampusAct(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
+            consultarCampus();
         }
     }
 }
