@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,21 @@ namespace Gestion_Laboratorios
 {
     public partial class FrmReservacion : Form
     {
-        public Reservacion reserva { get; set; }
-        private ReservEntities entities = new ReservEntities();
+        public SqlConnection con { get; set; }
+
+        public string N_Reservacion { get; set; }
+        public string Empleado { get; set; }
+        public string Aula { get; set; }
+        public string Usuario { get; set; }
+        public string FechaReservacion { get; set; }
+        public string Cantidad_horas { get; set; }
+        public string Comentario { get; set; }
+        public string Estado { get; set; }
+
+        public string modo { get; set; }
+
+        /*        public Reservacion reserva { get; set; }
+                private ReservEntities entities = new ReservEntities();*/
 
         public FrmReservacion()
         {
@@ -24,40 +38,92 @@ namespace Gestion_Laboratorios
         private void FrmReservar_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'gestion_laboratoriosDataSet.Aula' table. You can move, or remove it, as needed.
-            this.aulaTableAdapter.Fill(this.gestion_laboratoriosDataSet.Aula);
-            if (reserva != null)
+            /*            this.aulaTableAdapter.Fill(this.gestion_laboratoriosDataSet.Aula);
+                        if (reserva != null)
+                        {
+                            txtEmpleado.Text = reserva.Empleado.ToString();
+
+                            txtUsuario.Text = reserva.Usuario.ToString();
+                            cbxAulaReserv.Text = reserva.Aula.ToString();
+                            fexhaReserva.Text = reserva.FechaReservacion.ToString();
+
+                            DTHorasReserva.Text = reserva.Cantidad_horas.ToString();
+
+                            txtComentario.Text = reserva.Comentario.ToString();
+
+
+                        }*/
+            try
             {
-                txtUsuario.Text = reserva.Usuario.ToString();
-                txtEmpleado.Text = reserva.Empleado.ToString();
-                fexhaReserva.Text = reserva.FechaReservacion.ToString();
-                // NO Encuentro como parsear la hora para que la bd entienda, la bd acepta un dato time 
-                
-                DTHorasReserva.Text = reserva.Cantidad_horas.ToString();
-                cbxAulaReserv.Text = reserva.Aula.ToString(); 
+                numNumeroReserv.Text = N_Reservacion;
+                txtEmpleado.Text = Empleado;
+                cbxAulaReserv.Text = Aula;
+                txtUsuario.Text = Usuario;
+                fexhaReserva.Text = FechaReservacion;
+                DTHorasReserva.Text = Cantidad_horas;
+                txtComentario.Text = Comentario;
+                cbxEstadoAulaReserv.Text = Estado;
+                numNumeroReserv.Enabled = modo.Equals("C");
+            }
+            catch (Exception)
+            {
 
-
+                throw;
             }
         }
 
         private void BtnGuardarReserva_Click(object sender, EventArgs e)
         {
 
-
-
-            entities.Reservacion.Add(
-                new Reservacion
+            try
+            {
+                string sql = "";
+                if (modo.Equals("C"))
                 {
-                    Empleado = txtEmpleado.Text,
-                    Usuario = txtUsuario.Text,
-                    Aula = cbxAulaReserv.Text,
-                    FechaReservacion = fexhaReserva.Value,
-                Cantidad_horas = DTHorasReserva.Text,
-                   Estado = cbxEstadoAulaReserv.Text,
-                    Comentario = txtComentario.Text
-                }); ; 
-            entities.SaveChanges();
-            MessageBox.Show("Reserva guarada con exito");
-            this.Close();
+                    sql = "insert into Reservacion Values ('";
+                    sql += numNumeroReserv.Value + "','" + txtEmpleado.Text + "','" + txtUsuario.Text + "','" + cbxAulaReserv.Text + "','";
+                    sql += fexhaReserva.Text + "','" + DTHorasReserva.Text + "','" + cbxEstadoAulaReserv.Text + "','" + txtComentario.Text + "')";
+                }
+                else
+                {
+                    sql = "update Reservacion set";
+
+                    sql += "Empleado" + txtEmpleado.Text + "','";
+                    sql += "Aula" + txtUsuario.Text + "','";
+                    sql += "Usuario" + cbxAulaReserv.Text + "','";
+                    sql += "FechaReservacion" + fexhaReserva.Value + "','";
+                    sql += "Cantidad_horas" + DTHorasReserva.Text + "','";
+                    sql += "Comentario" + txtComentario.Text + "','";
+                    sql += "Estado" + cbxEstadoAulaReserv.Text + "','";
+                    sql += "where N_Reservacion = '" + numNumeroReserv.Value + "'";
+
+                }
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Registro Guardado con exito");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al guardadr" + ex.Message);
+            }
+
+            /*            entities.Reservacion.Add(
+                            new Reservacion
+                            {
+                                N_Reservacion = Convert.ToInt32(numNumeroReserv.Value),
+                                Empleado = txtEmpleado.Text,
+                                Usuario = txtUsuario.Text,
+                                Aula = cbxAulaReserv.Text,
+                                FechaReservacion = fexhaReserva.Value,
+                            Cantidad_horas = DTHorasReserva.Text,
+                               Estado = cbxEstadoAulaReserv.Text,
+                                Comentario = txtComentario.Text
+                            });; ; 
+                        entities.SaveChanges();
+                        MessageBox.Show("Reserva guarada con exito");
+                        this.Close();*/
 
         }
 
@@ -65,5 +131,25 @@ namespace Gestion_Laboratorios
         {
 
         }
+
+        private void EliminarReserv_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql = "delte Reservacion";
+                sql += "where N_Reservacion = '"+numNumeroReserv.Value+"'";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Registro eliminiado");
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al eliminar" + ex.Message);
+            }
+        }
     }
 }
+

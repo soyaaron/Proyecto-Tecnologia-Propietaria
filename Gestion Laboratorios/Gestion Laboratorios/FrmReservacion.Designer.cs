@@ -48,14 +48,18 @@
             this.DTHorasReserva = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.cbxEstadoAulaReserv = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.numNumeroReserv = new System.Windows.Forms.NumericUpDown();
+            this.EliminarReserv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gestion_laboratoriosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aulaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNumeroReserv)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 21);
+            this.label2.Location = new System.Drawing.Point(34, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 1;
@@ -64,7 +68,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 211);
+            this.label3.Location = new System.Drawing.Point(34, 240);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 2;
@@ -73,7 +77,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 83);
+            this.label4.Location = new System.Drawing.Point(34, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 13);
             this.label4.TabIndex = 3;
@@ -82,7 +86,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 53);
+            this.label5.Location = new System.Drawing.Point(34, 82);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 4;
@@ -90,14 +94,14 @@
             // 
             // txtEmpleado
             // 
-            this.txtEmpleado.Location = new System.Drawing.Point(167, 21);
+            this.txtEmpleado.Location = new System.Drawing.Point(167, 50);
             this.txtEmpleado.Name = "txtEmpleado";
             this.txtEmpleado.Size = new System.Drawing.Size(100, 20);
             this.txtEmpleado.TabIndex = 6;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(167, 50);
+            this.txtUsuario.Location = new System.Drawing.Point(167, 79);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 7;
@@ -105,14 +109,15 @@
             // fexhaReserva
             // 
             this.fexhaReserva.CustomFormat = "YYYY/mm/dd";
-            this.fexhaReserva.Location = new System.Drawing.Point(167, 76);
+            this.fexhaReserva.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fexhaReserva.Location = new System.Drawing.Point(167, 105);
             this.fexhaReserva.Name = "fexhaReserva";
-            this.fexhaReserva.Size = new System.Drawing.Size(200, 20);
+            this.fexhaReserva.Size = new System.Drawing.Size(100, 20);
             this.fexhaReserva.TabIndex = 8;
             // 
             // txtComentario
             // 
-            this.txtComentario.Location = new System.Drawing.Point(167, 206);
+            this.txtComentario.Location = new System.Drawing.Point(167, 235);
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.Size = new System.Drawing.Size(200, 67);
             this.txtComentario.TabIndex = 9;
@@ -120,7 +125,7 @@
             // 
             // BtnGuardarReserva
             // 
-            this.BtnGuardarReserva.Location = new System.Drawing.Point(302, 279);
+            this.BtnGuardarReserva.Location = new System.Drawing.Point(302, 308);
             this.BtnGuardarReserva.Name = "BtnGuardarReserva";
             this.BtnGuardarReserva.Size = new System.Drawing.Size(75, 23);
             this.BtnGuardarReserva.TabIndex = 10;
@@ -130,7 +135,7 @@
             // 
             // BtnCancelarReserva
             // 
-            this.BtnCancelarReserva.Location = new System.Drawing.Point(383, 279);
+            this.BtnCancelarReserva.Location = new System.Drawing.Point(383, 308);
             this.BtnCancelarReserva.Name = "BtnCancelarReserva";
             this.BtnCancelarReserva.Size = new System.Drawing.Size(75, 23);
             this.BtnCancelarReserva.TabIndex = 11;
@@ -140,7 +145,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 105);
+            this.label6.Location = new System.Drawing.Point(34, 134);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 13);
             this.label6.TabIndex = 12;
@@ -149,7 +154,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 132);
+            this.label1.Location = new System.Drawing.Point(34, 161);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 13);
             this.label1.TabIndex = 14;
@@ -162,7 +167,7 @@
             "LAB-A",
             "LAB-B",
             "LAB-C"});
-            this.cbxAulaReserv.Location = new System.Drawing.Point(167, 129);
+            this.cbxAulaReserv.Location = new System.Drawing.Point(167, 158);
             this.cbxAulaReserv.Name = "cbxAulaReserv";
             this.cbxAulaReserv.Size = new System.Drawing.Size(121, 21);
             this.cbxAulaReserv.TabIndex = 15;
@@ -187,7 +192,7 @@
             this.DTHorasReserva.CustomFormat = "HH:mm:ss";
             this.DTHorasReserva.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.DTHorasReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DTHorasReserva.Location = new System.Drawing.Point(167, 99);
+            this.DTHorasReserva.Location = new System.Drawing.Point(167, 128);
             this.DTHorasReserva.Name = "DTHorasReserva";
             this.DTHorasReserva.Size = new System.Drawing.Size(100, 20);
             this.DTHorasReserva.TabIndex = 16;
@@ -195,7 +200,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(34, 167);
+            this.label7.Location = new System.Drawing.Point(34, 196);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 17;
@@ -208,16 +213,47 @@
             "Disponible",
             "Reservado",
             "Deshabilitado"});
-            this.cbxEstadoAulaReserv.Location = new System.Drawing.Point(167, 164);
+            this.cbxEstadoAulaReserv.Location = new System.Drawing.Point(167, 193);
             this.cbxEstadoAulaReserv.Name = "cbxEstadoAulaReserv";
             this.cbxEstadoAulaReserv.Size = new System.Drawing.Size(121, 21);
             this.cbxEstadoAulaReserv.TabIndex = 18;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(34, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Numero Reserv.";
+            // 
+            // numNumeroReserv
+            // 
+            this.numNumeroReserv.Enabled = false;
+            this.numNumeroReserv.InterceptArrowKeys = false;
+            this.numNumeroReserv.Location = new System.Drawing.Point(167, 25);
+            this.numNumeroReserv.Name = "numNumeroReserv";
+            this.numNumeroReserv.Size = new System.Drawing.Size(68, 20);
+            this.numNumeroReserv.TabIndex = 20;
+            // 
+            // EliminarReserv
+            // 
+            this.EliminarReserv.Location = new System.Drawing.Point(361, 12);
+            this.EliminarReserv.Name = "EliminarReserv";
+            this.EliminarReserv.Size = new System.Drawing.Size(97, 23);
+            this.EliminarReserv.TabIndex = 21;
+            this.EliminarReserv.Text = "Eliminar Reserva";
+            this.EliminarReserv.UseVisualStyleBackColor = true;
+            this.EliminarReserv.Click += new System.EventHandler(this.EliminarReserv_Click);
             // 
             // FrmReservacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 316);
+            this.ClientSize = new System.Drawing.Size(470, 343);
+            this.Controls.Add(this.EliminarReserv);
+            this.Controls.Add(this.numNumeroReserv);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.cbxEstadoAulaReserv);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.DTHorasReserva);
@@ -239,6 +275,7 @@
             this.Load += new System.EventHandler(this.FrmReservar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gestion_laboratoriosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aulaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNumeroReserv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,5 +301,8 @@
         private System.Windows.Forms.DateTimePicker DTHorasReserva;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbxEstadoAulaReserv;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown numNumeroReserv;
+        private System.Windows.Forms.Button EliminarReserv;
     }
 }
