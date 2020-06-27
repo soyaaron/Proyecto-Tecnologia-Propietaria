@@ -50,7 +50,7 @@ namespace Gestion_Laboratorios
                     Empleado = txtEmpleado.Text,
                     Usuario = txtUsuario.Text,
                     Aula = cbxAulaReserv.Text,
-                    FechaReservacion = fexhaReserva.Value,
+                    FechaReservacion = fexhaReserva.Text,
                 Cantidad_horas = DTHorasReserva.Text,
                    Estado = cbxEstadoAulaReserv.Text,
                     Comentario = txtComentario.Text

@@ -133,6 +133,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dvgReservaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dvgReservaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgReservaciones.Size = new System.Drawing.Size(978, 335);
             this.dvgReservaciones.TabIndex = 1;
             this.dvgReservaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReserv_CellDobleClick);

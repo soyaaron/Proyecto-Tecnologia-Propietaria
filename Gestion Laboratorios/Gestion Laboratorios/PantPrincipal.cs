@@ -68,8 +68,8 @@ namespace Gestion_Laboratorios
             reserva.Empleado = row.Cells[1].Value.ToString();
             reserva.Aula = row.Cells[2].Value.ToString();
             reserva.Usuario = row.Cells[3].Value.ToString();
-            reserva.FechaReservacion = Convert.ToDateTime(row.Cells[4]);
-             reserva.Cantidad_horas = row.Cells[5].Value.ToString();
+            reserva.FechaReservacion = row.Cells[4].Value.ToString();
+            reserva.Cantidad_horas = row.Cells[5].Value.ToString();
             reserva.Comentario = row.Cells[6].Value.ToString();
 
 

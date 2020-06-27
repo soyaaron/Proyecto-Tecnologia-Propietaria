@@ -105,9 +105,10 @@
             // fexhaReserva
             // 
             this.fexhaReserva.CustomFormat = "YYYY/mm/dd";
+            this.fexhaReserva.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fexhaReserva.Location = new System.Drawing.Point(167, 76);
             this.fexhaReserva.Name = "fexhaReserva";
-            this.fexhaReserva.Size = new System.Drawing.Size(200, 20);
+            this.fexhaReserva.Size = new System.Drawing.Size(100, 20);
             this.fexhaReserva.TabIndex = 8;
             // 
             // txtComentario
