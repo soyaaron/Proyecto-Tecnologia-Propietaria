@@ -11,39 +11,37 @@ using System.Windows.Forms;
 
 namespace Gestion_Laboratorios
 {
-
-    public partial class FrmAgregarUsuario : Form
+    public partial class FrmAgregarEmpleado : Form
     {
         public SqlConnection con { get; set; }
 
-        public string IdUsuario { get; set; }
+        public string Id_Empleado { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Cedula { get; set; }
-        public string NCarnet { get; set; }
-        public string TipoUsuario { get; set; }
-
+        public string Tanda { get; set; }
+        public string FechaIngreso { get; set; }
         public string Estado { get; set; }
 
         public string modo { get; set; }
-        public FrmAgregarUsuario()
+        public FrmAgregarEmpleado()
         {
             InitializeComponent();
         }
 
-        private void FrmAgregarUsuario_Load(object sender, EventArgs e)
+        private void FrmAgregarEmpleado_Load(object sender, EventArgs e)
         {
             try
             {
-                numIdUsr.Text = IdUsuario;
-                txtNombreUsr.Text = Nombre;
-                txtApellidoUsr.Text = Apellido;
+                numIdEmp.Text = Id_Empleado;
+                txtNombreEmp.Text = Nombre;
+                txtApellidoEmp.Text = Apellido;
                 txtCedula.Text = Cedula;
-                txtNoCarnet.Text = NCarnet;
-                cbxTipo.Text = TipoUsuario;
+                cbxTanda.Text = Tanda;
+                fechaIngreso.Text = FechaIngreso;
                 cbxEstado.Text = Estado;
-         
-                numIdUsr.Enabled = modo.Equals("C");
+
+                numIdEmp.Enabled = modo.Equals("C");
             }
             catch (Exception ex)
             {
@@ -59,19 +57,19 @@ namespace Gestion_Laboratorios
                 string sql = "";
                 if (modo.Equals("C"))
                 {
-                    sql = "insert into Usuario Values ('";
-                    sql += numIdUsr.Value + "','" + txtNombreUsr.Text + "','" + txtApellidoUsr.Text + "','" + txtCedula.Text + "','";
-                    sql += txtNoCarnet.Text + "','" + cbxTipo.Text + "','" + cbxEstado.Text + "')";
+                    sql = "insert into Empleado Values ('";
+                    sql += numIdEmp.Value + "','" + txtNombreEmp.Text + "','" + txtApellidoEmp.Text + "','" + txtCedula.Text + "','";
+                    sql += cbxTanda.Text + "','" + fechaIngreso.Text + "','" + cbxEstado.Text + "')";
                 }
                 else
                 {
-                    sql = " update Usuario set ";
+                    sql = " update Empleado set ";
 
-                    sql += "Nombre = '" + txtNombreUsr.Text + "',";
-                    sql += "Apellido = '" + txtApellidoUsr.Text + "',";
+                    sql += "Nombre = '" + numIdEmp.Text + "',";
+                    sql += "Apellido = '" + txtApellidoEmp.Text + "',";
                     sql += "Cedula = '" + txtCedula.Text + "',";
-                    sql += "NCarnet = '" + txtNoCarnet.Text + "',";
-                    sql += "TipoUsuario = '" + cbxTipo.Text + "',";
+                    sql += "NCarnet = '" + cbxTanda.Text + "',";
+                    sql += "TipoUsuario = '" + fechaIngreso.Text + "',";
                     sql += "Estado = '" + cbxEstado.Text + "',";
 
 
@@ -88,17 +86,12 @@ namespace Gestion_Laboratorios
             }
         }
 
-        private void FrmUsrAct(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                string sql = "delete Usuario";
-                sql += " where IdUsuario = '" + numIdUsr.Value + "'";
+                string sql = "delete Empleado";
+                sql += " where Id_Empleado = '" + numIdEmp.Value + "'";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminiado");
@@ -111,10 +104,5 @@ namespace Gestion_Laboratorios
                 MessageBox.Show("Error al eliminar " + ex.Message);
             }
         }
-
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
- }
+}

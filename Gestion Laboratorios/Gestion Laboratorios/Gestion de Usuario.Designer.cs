@@ -43,9 +43,9 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.DirgestUsr = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.DirgestUsr = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gestion_laboratoriosDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.panel1.SuspendLayout();
@@ -76,8 +76,10 @@
             this.dgvUser.ReadOnly = true;
             this.dgvUser.RowHeadersWidth = 51;
             this.dgvUser.RowTemplate.Height = 24;
+            this.dgvUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUser.Size = new System.Drawing.Size(722, 204);
             this.dgvUser.TabIndex = 1;
+            this.dgvUser.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdoubleclickUsr);
             // 
             // label5
             // 
@@ -194,14 +196,16 @@
             this.txtBuscar.Size = new System.Drawing.Size(162, 20);
             this.txtBuscar.TabIndex = 23;
             // 
-            // label9
+            // btnBuscar
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(286, 114);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Apellido";
+            this.btnBuscar.BackgroundImage = global::Gestion_Laboratorios.Properties.Resources.untitled;
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Location = new System.Drawing.Point(591, 5);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(56, 42);
+            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // DirgestUsr
             // 
@@ -215,16 +219,14 @@
             this.DirgestUsr.UseVisualStyleBackColor = true;
             this.DirgestUsr.Click += new System.EventHandler(this.DirgestUsr_Click);
             // 
-            // btnBuscar
+            // label9
             // 
-            this.btnBuscar.BackgroundImage = global::Gestion_Laboratorios.Properties.Resources.untitled;
-            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(591, 5);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(56, 42);
-            this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(286, 114);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 13);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Apellido";
             // 
             // Gestions_Usuarios
             // 
@@ -232,9 +234,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 366);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Gestions_Usuarios";
             this.Text = "Gestion de Usuarios";
+            this.Activated += new System.EventHandler(this.FrmGestUsrAct);
             this.Load += new System.EventHandler(this.Gestions_Usuarios_Load);
             this.Click += new System.EventHandler(this.d);
             ((System.ComponentModel.ISupportInitialize)(this.gestion_laboratoriosDataSet1)).EndInit();

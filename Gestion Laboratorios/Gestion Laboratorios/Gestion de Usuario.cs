@@ -59,5 +59,34 @@ namespace Gestion_Laboratorios
             frmres.modo = "C";
             frmres.ShowDialog();
         }
+
+        private void FrmGestUsrAct(object sender, EventArgs e)
+        {
+            consultaUsuarios();
+        }
+
+        private void dgvdoubleclickUsr(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = this.dgvUser.SelectedRows[0];
+                FrmAgregarUsuario frm = new FrmAgregarUsuario();
+                frm.IdUsuario = row.Cells[0].Value.ToString();
+                frm.Nombre = row.Cells[1].Value.ToString();
+                frm.Apellido = row.Cells[2].Value.ToString();
+                frm.Cedula = row.Cells[3].Value.ToString();
+                frm.NCarnet = row.Cells[4].Value.ToString();
+                frm.TipoUsuario = row.Cells[5].Value.ToString();
+                frm.Estado = row.Cells[6].Value.ToString();
+                frm.modo = "U";
+                frm.con = con;
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al editar" + ex.Message);
+            }
+        }
     }
 }

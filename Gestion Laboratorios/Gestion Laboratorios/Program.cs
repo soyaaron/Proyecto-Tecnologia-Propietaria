@@ -16,7 +16,7 @@ namespace Gestion_Laboratorios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Gestions_Usuarios());
+            Application.Run(new FrmGestionEmp());
         }
     }
 }
