@@ -16,8 +16,6 @@ namespace Gestion_Laboratorios
     public partial class PantPrincipal : Form
     {
         public SqlConnection con = null;
-        /*        public Reservacion reserva { get; set; }
-                private ReservEntities entities = new ReservEntities();*/
 
         public PantPrincipal()
         {
@@ -38,7 +36,7 @@ namespace Gestion_Laboratorios
                 string sql = "select * from Reservacion";
                 if (txtBuscar.Text.Length > 0)
                 {
-                    sql += " where " + txtBuscar.Text + " like '% ";
+                    sql += " where " + txtBuscar.Text + " like '%' ";
                     sql += " order by " + txtBuscar.Text;
                 }
                 SqlDataAdapter da = new SqlDataAdapter(sql, con);
@@ -50,6 +48,7 @@ namespace Gestion_Laboratorios
             catch (Exception ex)
             {
                 MessageBox.Show("Error al ejecutar consulta: " + ex.Message);
+                txtBuscar.Clear();
             }
         }
 
@@ -66,16 +65,6 @@ namespace Gestion_Laboratorios
             frmres.ShowDialog();
         }
 
-
-        /*       private void consultarPorCriterio()
-                {
-                    var reservacion = from em in entities.Reservacion
-                                      where (em.N_Reservacion.ToString().StartsWith(txtBuscar.Text) ||
-                                      em.Usuario.StartsWith(txtBuscar.Text) 
-                                      )
-                                      select em;
-                    dgvReservaciones.DataSource = reservacion.ToList();
-                }*/
 
         private void PantPrincipal_Activado(object sender, EventArgs e)
         {
@@ -107,21 +96,7 @@ namespace Gestion_Laboratorios
 
                 MessageBox.Show("Error al editar" + ex.Message);
             }
-            /*            DataGridViewRow row = this.dgvReservaciones.SelectedRows[0];
-                        Reservacion reserva = new Reservacion();
-                       // reserva.N_Reservacion = Int32.Parse(row.Cells[0].Value.ToString());
-                        reserva.N_Reservacion = Convert.ToInt32(row.Cells[0].Value);
-                        reserva.Empleado = row.Cells[1].Value.ToString();
-                        reserva.Aula = row.Cells[2].Value.ToString();
-                        reserva.Usuario = row.Cells[3].Value.ToString();
-                        reserva.FechaReservacion = Convert.ToDateTime(row.Cells[4]);
-                         reserva.Cantidad_horas = row.Cells[5].Value.ToString();
-                        reserva.Comentario = row.Cells[6].Value.ToString();
-                        reserva.Estado = row.Cells[7].Value.ToString();
 
-                        FrmReservacion frmres = new FrmReservacion();
-                        frmres.reserva = reserva;
-                        frmres.ShowDialog();*/
         }
 
 
@@ -151,6 +126,11 @@ namespace Gestion_Laboratorios
             getau.ShowDialog();
         }
 
+        private void DirGestEmp(object sender, EventArgs e)
+        {
+            GestionEdificiosForm edfrm = new GestionEdificiosForm();
+            edfrm.ShowDialog();
 
+        }
     }
 }

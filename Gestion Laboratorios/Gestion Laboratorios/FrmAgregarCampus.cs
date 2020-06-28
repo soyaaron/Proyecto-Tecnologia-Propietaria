@@ -28,7 +28,8 @@ namespace Gestion_Laboratorios
         {
             try
             {
-                txtNombreCampus.Text = IdCampus;
+                numIdCampus.Text = IdCampus;
+                txtNombreCampus.Text = Nombre;
                 cbxEstado.Text = Estado;
                 numIdCampus.Enabled = modo.Equals("C");
             }
@@ -47,13 +48,15 @@ namespace Gestion_Laboratorios
                 if (modo.Equals("C"))
                 {
                     sql = "insert into Campus Values ('";
+
                     sql += numIdCampus.Value + "','" + txtNombreCampus.Text + "','" + cbxEstado.Text + "')";
                 }
                 else
                 {
                     sql = " update Campus set ";
+/*                    sql += "IdCampus = '" + numIdCampus.Value;*/
                     sql += "Nombre = '" + txtNombreCampus.Text + "',";
-                    sql += "Estado = '" + cbxEstado.Text + "',";
+                    sql += "Estado = '" + cbxEstado.Text + "'";
                     sql += "where IdCampus = '" + numIdCampus.Value + "'";
                 }
                 SqlCommand cmd = new SqlCommand(sql, con);
@@ -73,7 +76,7 @@ namespace Gestion_Laboratorios
             try
             {
                 string sql = "delete Campus";
-                sql += " where N_Reservacion = '" + numIdCampus.Value + "'";
+                sql += " where IdCampus = '" + numIdCampus.Value + "'";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Registro eliminiado");

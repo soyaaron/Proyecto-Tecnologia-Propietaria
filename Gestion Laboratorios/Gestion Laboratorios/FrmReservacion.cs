@@ -27,8 +27,7 @@ namespace Gestion_Laboratorios
 
         public string modo { get; set; }
 
-        /*        public Reservacion reserva { get; set; }
-                private ReservEntities entities = new ReservEntities();*/
+
 
         public FrmReservacion()
         {
@@ -38,21 +37,7 @@ namespace Gestion_Laboratorios
         private void FrmReservar_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'gestion_laboratoriosDataSet.Aula' table. You can move, or remove it, as needed.
-            /*            this.aulaTableAdapter.Fill(this.gestion_laboratoriosDataSet.Aula);
-                        if (reserva != null)
-                        {
-                            txtEmpleado.Text = reserva.Empleado.ToString();
 
-                            txtUsuario.Text = reserva.Usuario.ToString();
-                            cbxAulaReserv.Text = reserva.Aula.ToString();
-                            fexhaReserva.Text = reserva.FechaReservacion.ToString();
-
-                            DTHorasReserva.Text = reserva.Cantidad_horas.ToString();
-
-                            txtComentario.Text = reserva.Comentario.ToString();
-
-
-                        }*/
             try
             {
                 numNumeroReserv.Text = N_Reservacion;
@@ -109,21 +94,7 @@ namespace Gestion_Laboratorios
                 MessageBox.Show("Error al guardar " + ex.Message);
             }
 
-            /*            entities.Reservacion.Add(
-                            new Reservacion
-                            {
-                                N_Reservacion = Convert.ToInt32(numNumeroReserv.Value),
-                                Empleado = txtEmpleado.Text,
-                                Usuario = txtUsuario.Text,
-                                Aula = cbxAulaReserv.Text,
-                                FechaReservacion = fexhaReserva.Value,
-                            Cantidad_horas = DTHorasReserva.Text,
-                               Estado = cbxEstadoAulaReserv.Text,
-                                Comentario = txtComentario.Text
-                            });; ; 
-                        entities.SaveChanges();
-                        MessageBox.Show("Reserva guarada con exito");
-                        this.Close();*/
+
 
         }
 

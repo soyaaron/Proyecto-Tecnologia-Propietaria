@@ -76,6 +76,7 @@
             this.gestionEdificiosToolStripMenuItem.Name = "gestionEdificiosToolStripMenuItem";
             this.gestionEdificiosToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
             this.gestionEdificiosToolStripMenuItem.Text = "Gestion Edificios";
+            this.gestionEdificiosToolStripMenuItem.Click += new System.EventHandler(this.DirGestEmp);
             // 
             // gestionAulasToolStripMenuItem
             // 

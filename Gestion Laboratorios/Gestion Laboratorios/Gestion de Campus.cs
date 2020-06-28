@@ -37,7 +37,7 @@ namespace Gestion_Laboratorios
                 string sql = "select * from Campus";
                 if (txtBusqCampus.Text.Length > 0) {
 
-                    sql += " where " + txtBusqCampus.Text + " like '% ";
+                    sql += " where " + txtBusqCampus.Text + " like '%' ";
                     sql += " order by " + txtBusqCampus.Text;
                 }
                 SqlDataAdapter da = new SqlDataAdapter(sql, con);
@@ -51,6 +51,7 @@ namespace Gestion_Laboratorios
             {
 
                 MessageBox.Show("Error al ejecutar consulta: " + ex.Message);
+                txtBusqCampus.Clear();
             }
         }
 
@@ -65,6 +66,26 @@ namespace Gestion_Laboratorios
         private void GestionCampusAct(object sender, EventArgs e)
         {
             consultarCampus();
+        }
+
+        private void dvgCampusDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = this.dgvCampus.SelectedRows[0];
+                FrmAgregarCampus frm = new FrmAgregarCampus();
+                frm.IdCampus = row.Cells[0].Value.ToString();
+                frm.Nombre = row.Cells[1].Value.ToString();
+                frm.Estado = row.Cells[2].Value.ToString();
+                frm.modo = "U";
+                frm.con = con;
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al ejecutar consulta: " + ex.Message);
+            }
         }
     }
 }

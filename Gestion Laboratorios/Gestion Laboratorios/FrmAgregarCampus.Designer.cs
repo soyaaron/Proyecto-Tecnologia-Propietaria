@@ -69,7 +69,6 @@
             // 
             // numIdCampus
             // 
-            this.numIdCampus.Enabled = false;
             this.numIdCampus.Location = new System.Drawing.Point(115, 8);
             this.numIdCampus.Name = "numIdCampus";
             this.numIdCampus.Size = new System.Drawing.Size(50, 20);
