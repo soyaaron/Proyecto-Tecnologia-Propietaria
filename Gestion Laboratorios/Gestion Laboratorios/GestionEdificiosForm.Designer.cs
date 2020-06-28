@@ -29,35 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Buscar = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBusqEd = new System.Windows.Forms.TextBox();
             this.gestion_laboratoriosDataSet = new Gestion_Laboratorios.Gestion_laboratoriosDataSet();
             this.gestionlaboratoriosDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.edificiosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.edificiosTableAdapter = new Gestion_Laboratorios.Gestion_laboratoriosDataSetTableAdapters.EdificiosTableAdapter();
             this.tableAdapterManager = new Gestion_Laboratorios.Gestion_laboratoriosDataSetTableAdapters.TableAdapterManager();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvEdificios = new System.Windows.Forms.DataGridView();
+            this.btnAgregarEdifico = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gestion_laboratoriosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionlaboratoriosDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edificiosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEdificios)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Edificio_ID";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // label2
             // 
@@ -71,20 +60,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 99);
+            this.label3.Location = new System.Drawing.Point(308, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Estado";
             // 
-            // label4
+            // Buscar
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 127);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Descripcion";
+            this.Buscar.AutoSize = true;
+            this.Buscar.Location = new System.Drawing.Point(58, 31);
+            this.Buscar.Name = "Buscar";
+            this.Buscar.Size = new System.Drawing.Size(40, 13);
+            this.Buscar.TabIndex = 3;
+            this.Buscar.Text = "Buscar";
             // 
             // comboBox2
             // 
@@ -97,17 +86,17 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(151, 91);
+            this.comboBox3.Location = new System.Drawing.Point(401, 28);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 6;
             // 
-            // textBox1
+            // txtBusqEd
             // 
-            this.textBox1.Location = new System.Drawing.Point(151, 124);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtBusqEd.Location = new System.Drawing.Point(151, 28);
+            this.txtBusqEd.Name = "txtBusqEd";
+            this.txtBusqEd.Size = new System.Drawing.Size(121, 20);
+            this.txtBusqEd.TabIndex = 7;
             // 
             // gestion_laboratoriosDataSet
             // 
@@ -118,13 +107,6 @@
             // 
             this.gestionlaboratoriosDataSetBindingSource.DataSource = this.gestion_laboratoriosDataSet;
             this.gestionlaboratoriosDataSetBindingSource.Position = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(151, 26);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 9;
             // 
             // edificiosBindingSource
             // 
@@ -147,55 +129,65 @@
             this.tableAdapterManager.UpdateOrder = Gestion_Laboratorios.Gestion_laboratoriosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = null;
             // 
-            // dataGridView1
+            // dgvEdificios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 162);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(832, 283);
-            this.dataGridView1.TabIndex = 10;
+            this.dgvEdificios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEdificios.Location = new System.Drawing.Point(12, 165);
+            this.dgvEdificios.Name = "dgvEdificios";
+            this.dgvEdificios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEdificios.Size = new System.Drawing.Size(822, 290);
+            this.dgvEdificios.TabIndex = 10;
+            this.dgvEdificios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EdEdificio);
+            // 
+            // btnAgregarEdifico
+            // 
+            this.btnAgregarEdifico.Location = new System.Drawing.Point(759, 12);
+            this.btnAgregarEdifico.Name = "btnAgregarEdifico";
+            this.btnAgregarEdifico.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarEdifico.TabIndex = 11;
+            this.btnAgregarEdifico.Text = "Agregar";
+            this.btnAgregarEdifico.UseVisualStyleBackColor = true;
+            this.btnAgregarEdifico.Click += new System.EventHandler(this.btnAgregarEdificoClick);
             // 
             // GestionEdificiosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 467);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnAgregarEdifico);
+            this.Controls.Add(this.dgvEdificios);
+            this.Controls.Add(this.txtBusqEd);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Buscar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "GestionEdificiosForm";
-            this.Text = "-";
+            this.Text = "Gestion Edificios";
+            this.Activated += new System.EventHandler(this.ActGestED);
             this.Load += new System.EventHandler(this.GestionEdificiosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gestion_laboratoriosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionlaboratoriosDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edificiosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEdificios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Buscar;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBusqEd;
         private System.Windows.Forms.BindingSource gestionlaboratoriosDataSetBindingSource;
         private Gestion_laboratoriosDataSet gestion_laboratoriosDataSet;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.BindingSource edificiosBindingSource;
         private Gestion_laboratoriosDataSetTableAdapters.EdificiosTableAdapter edificiosTableAdapter;
         private Gestion_laboratoriosDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEdificios;
+        private System.Windows.Forms.Button btnAgregarEdifico;
     }
 }

@@ -79,6 +79,30 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAgregarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarEmpleado.Designer.cs">
+      <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarUsuario.Designer.cs">
+      <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarCampus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarCampus.Designer.cs">
+      <DependentUpon>FrmAgregarCampus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarEdificio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarEdificio.Designer.cs">
+      <DependentUpon>FrmAgregarEdificio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gestion de aulas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +199,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarCampus.resx">
+      <DependentUpon>FrmAgregarCampus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarEdificio.resx">
+      <DependentUpon>FrmAgregarEdificio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarEmpleado.resx">
+      <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarUsuario.resx">
+      <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestion de aulas.resx">
       <DependentUpon>Gestion de aulas.cs</DependentUpon>
