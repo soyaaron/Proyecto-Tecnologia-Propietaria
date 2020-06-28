@@ -96,5 +96,7 @@ namespace Gestion_Laboratorios
         }
 
 
+
+
     }
 }

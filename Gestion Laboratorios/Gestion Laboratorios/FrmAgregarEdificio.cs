@@ -99,6 +99,12 @@ namespace Gestion_Laboratorios
             }
         }
 
+        //ITEM PARA COMBOBOX 
+
+        private void cbxCampusFiller() {
+
+        }
+
         private void Label4_Click(object sender, EventArgs e)
         {
 
@@ -136,6 +142,21 @@ namespace Gestion_Laboratorios
 
         private void Label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void LoadCampus(object sender, EventArgs e)
+        {
+  
+            string sql = "select Nombre from Campus";
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            SqlDataReader DR = cmd.ExecuteReader();
+            while (DR.Read())
+            {
+                cbxCampus.Items.Add(DR[0]);
+
+            };
 
         }
     }

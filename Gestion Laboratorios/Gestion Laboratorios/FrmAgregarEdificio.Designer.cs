@@ -133,13 +133,11 @@
             // cbxCampus
             // 
             this.cbxCampus.FormattingEnabled = true;
-            this.cbxCampus.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
             this.cbxCampus.Location = new System.Drawing.Point(114, 62);
             this.cbxCampus.Name = "cbxCampus";
             this.cbxCampus.Size = new System.Drawing.Size(121, 21);
             this.cbxCampus.TabIndex = 19;
+            this.cbxCampus.DropDown += new System.EventHandler(this.LoadCampus);
             this.cbxCampus.SelectedIndexChanged += new System.EventHandler(this.CbxCampus_SelectedIndexChanged);
             // 
             // label4

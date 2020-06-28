@@ -142,8 +142,9 @@
             // 
             this.cbxTanda.FormattingEnabled = true;
             this.cbxTanda.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
+            "Matutino",
+            "Vespertino",
+            "Nocturno"});
             this.cbxTanda.Location = new System.Drawing.Point(124, 124);
             this.cbxTanda.Name = "cbxTanda";
             this.cbxTanda.Size = new System.Drawing.Size(121, 21);

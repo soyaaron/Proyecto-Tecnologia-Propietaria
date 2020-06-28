@@ -143,8 +143,8 @@
             // 
             this.cbxTipo.FormattingEnabled = true;
             this.cbxTipo.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
+            "Estudiante",
+            "Profesor"});
             this.cbxTipo.Location = new System.Drawing.Point(115, 150);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(121, 21);
