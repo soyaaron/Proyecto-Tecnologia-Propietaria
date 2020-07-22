@@ -16,7 +16,7 @@ namespace Gestion_Laboratorios
     public partial class PantPrincipal : Form
     {
         public SqlConnection con = null;
-
+        //
         public PantPrincipal()
         {
             InitializeComponent();
