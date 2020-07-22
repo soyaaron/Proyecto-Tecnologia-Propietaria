@@ -162,6 +162,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gestion_laboratoriosDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionEdificiosForm.resx">
       <DependentUpon>GestionEdificiosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantPrincipal.resx">
       <DependentUpon>PantPrincipal.cs</DependentUpon>
@@ -303,6 +312,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\iconmonstr-lock-21-64.png" />
     <None Include="Resources\download.png" />
     <None Include="Resources\images.png" />
     <None Include="Resources\untitled.png" />

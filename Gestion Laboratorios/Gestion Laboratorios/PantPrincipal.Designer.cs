@@ -60,7 +60,7 @@
             this.gestionEmpleadosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1005, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(880, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -135,14 +135,14 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvReservaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvReservaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReservaciones.Size = new System.Drawing.Size(978, 335);
+            this.dgvReservaciones.Size = new System.Drawing.Size(854, 335);
             this.dgvReservaciones.TabIndex = 1;
             this.dgvReservaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReserv_CellDobleClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(832, 54);
+            this.label1.Location = new System.Drawing.Point(708, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 3;
@@ -179,7 +179,7 @@
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(940, 35);
+            this.button1.Location = new System.Drawing.Point(816, 27);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(51, 51);
             this.button1.TabIndex = 2;
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 450);
+            this.ClientSize = new System.Drawing.Size(880, 450);
             this.Controls.Add(this.BtnBuscarReservas);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label2);

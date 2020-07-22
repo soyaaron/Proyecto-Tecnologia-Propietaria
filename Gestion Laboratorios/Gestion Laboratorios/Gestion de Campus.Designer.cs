@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gestion_de_Campus));
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnAgregarCampus = new System.Windows.Forms.Button();
             this.CmdBuscar = new System.Windows.Forms.Button();
             this.dgvCampus = new System.Windows.Forms.DataGridView();
@@ -39,36 +37,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCampus)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(203, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Campus:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DisplayMember = "campus";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "01 - Gomez",
-            "02 - Cafan",
-            "03 - Cibao"});
-            this.comboBox1.Location = new System.Drawing.Point(272, 11);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 21);
-            this.comboBox1.TabIndex = 2;
-            // 
             // btnAgregarCampus
             // 
             this.btnAgregarCampus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregarCampus.BackgroundImage")));
             this.btnAgregarCampus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregarCampus.Location = new System.Drawing.Point(540, 11);
+            this.btnAgregarCampus.Location = new System.Drawing.Point(388, 11);
             this.btnAgregarCampus.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarCampus.Name = "btnAgregarCampus";
             this.btnAgregarCampus.Size = new System.Drawing.Size(51, 51);
@@ -80,7 +53,7 @@
             // 
             this.CmdBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CmdBuscar.BackgroundImage")));
             this.CmdBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CmdBuscar.Location = new System.Drawing.Point(482, 11);
+            this.CmdBuscar.Location = new System.Drawing.Point(330, 11);
             this.CmdBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.CmdBuscar.Name = "CmdBuscar";
             this.CmdBuscar.Size = new System.Drawing.Size(51, 51);
@@ -94,7 +67,7 @@
             this.dgvCampus.Location = new System.Drawing.Point(16, 104);
             this.dgvCampus.Name = "dgvCampus";
             this.dgvCampus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCampus.Size = new System.Drawing.Size(574, 287);
+            this.dgvCampus.Size = new System.Drawing.Size(423, 287);
             this.dgvCampus.TabIndex = 14;
             this.dgvCampus.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgCampusDoubleClick);
             // 
@@ -118,14 +91,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 403);
+            this.ClientSize = new System.Drawing.Size(457, 403);
             this.Controls.Add(this.txtBusqCampus);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvCampus);
             this.Controls.Add(this.btnAgregarCampus);
             this.Controls.Add(this.CmdBuscar);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Gestion_de_Campus";
             this.Text = "Gestion de Campus";
@@ -138,8 +109,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button CmdBuscar;
         private System.Windows.Forms.Button btnAgregarCampus;
         private System.Windows.Forms.DataGridView dgvCampus;
