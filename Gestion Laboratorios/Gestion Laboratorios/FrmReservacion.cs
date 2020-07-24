@@ -14,6 +14,8 @@ namespace Gestion_Laboratorios
 {
     public partial class FrmReservacion : Form
     {
+
+
         public SqlConnection con { get; set; }
 
         public string N_Reservacion { get; set; }
@@ -36,6 +38,32 @@ namespace Gestion_Laboratorios
 
         private void FrmReservar_Load(object sender, EventArgs e)
         {
+            //Para llenar combo box desde la base de datos
+            string constr = @"Data Source=AARONLAPTOP;Initial Catalog=Gestion_laboratorios;Integrated Security=True";
+           
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter("SELECT IdAula, Nombre FROM Aula", con))
+                {
+                    //Fill the DataTable with records from Table.
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    //Insert the Default Item to DataTable.
+                    DataRow row = dt.NewRow();
+                    row[0] = 0;
+                    row[1] = "Seleccione aula";
+                    dt.Rows.InsertAt(row, 0);
+
+                    //Assign DataTable as DataSource.
+                    cbxAulaReserv.DataSource = dt;
+                    cbxAulaReserv.DisplayMember = "Nombre";
+                    cbxAulaReserv.ValueMember = "IdAula";
+                }
+            }
+            //FIN para llenar combo box 
+
+
             // TODO: This line of code loads data into the 'gestion_laboratoriosDataSet.Aula' table. You can move, or remove it, as needed.
 
             try
@@ -55,10 +83,35 @@ namespace Gestion_Laboratorios
 
                 MessageBox.Show("Error al cargar " + ex.Message);
             }
+
+
+
         }
+        //Validacion
+
+
+
+        //Guardar reserva
 
         private void BtnGuardarReserva_Click(object sender, EventArgs e)
         {
+            void verificarCampos()
+            {
+                VerCampos(txtUsuario);
+
+
+            }
+
+            verificarCampos();
+            void VerCampos(TextBox tb)
+            {
+                if (string.IsNullOrEmpty(tb.Text))
+                {
+                    MessageBox.Show(tb.Name + " Debe llenar esta(s) casilla(s)");
+                }
+                else
+                {
+
 
             try
             {
@@ -95,8 +148,11 @@ namespace Gestion_Laboratorios
             }
 
 
-
+                }
+            }
         }
+
+
 
         private void CbxAulaReserv_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -107,6 +163,7 @@ namespace Gestion_Laboratorios
         {
             try
             {
+                
                 string sql = "delete Reservacion";
                 sql += " where N_Reservacion = '" +numNumeroReserv.Value+"'";
                 SqlCommand cmd = new SqlCommand(sql, con);
@@ -126,6 +183,9 @@ namespace Gestion_Laboratorios
         {
             this.Close();
         }
+
+
+
     }
 }
 

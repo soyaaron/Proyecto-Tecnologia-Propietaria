@@ -26,6 +26,7 @@ namespace Gestion_Laboratorios
 
         private void FrmAgregarCampus_Load(object sender, EventArgs e)
         {
+
             try
             {
                 numIdCampus.Text = IdCampus;
@@ -42,33 +43,52 @@ namespace Gestion_Laboratorios
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            void verificarCampos()
             {
-                string sql = "";
-                if (modo.Equals("C"))
-                {
-                    sql = "insert into Campus Values ('";
+                VerCampos(txtNombreCampus);
 
-                    sql += numIdCampus.Value + "','" + txtNombreCampus.Text + "','" + cbxEstado.Text + "')";
+
+            }
+
+            verificarCampos();
+            void VerCampos(TextBox tb)
+            {
+                if (string.IsNullOrEmpty(tb.Text))
+                {
+                    MessageBox.Show(tb.Name + " Debe llenar esta(s) casilla(s)");
                 }
                 else
                 {
-                    sql = " update Campus set ";
-/*                    sql += "IdCampus = '" + numIdCampus.Value;*/
-                    sql += "Nombre = '" + txtNombreCampus.Text + "',";
-                    sql += "Estado = '" + cbxEstado.Text + "'";
-                    sql += "where IdCampus = '" + numIdCampus.Value + "'";
-                }
-                SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Registro guardado con exito");
-                this.Close();
-            }
-            catch (Exception ex)
-            {
 
-                MessageBox.Show("Error al guardar " + ex.Message);
-            }
+
+                    try
+                    {
+                        string sql = "";
+                        if (modo.Equals("C"))
+                        {
+                            sql = "insert into Campus Values ('";
+
+                            sql += numIdCampus.Value + "','" + txtNombreCampus.Text + "','" + cbxEstado.Text + "')";
+                        }
+                        else
+                        {
+                            sql = " update Campus set ";
+                            /*                    sql += "IdCampus = '" + numIdCampus.Value;*/
+                            sql += "Nombre = '" + txtNombreCampus.Text + "',";
+                            sql += "Estado = '" + cbxEstado.Text + "'";
+                            sql += "where IdCampus = '" + numIdCampus.Value + "'";
+                        }
+                        SqlCommand cmd = new SqlCommand(sql, con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Registro guardado con exito");
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Error al guardar " + ex.Message);
+                    }
+                }
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)

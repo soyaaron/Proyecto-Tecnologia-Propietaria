@@ -31,6 +31,45 @@ namespace Gestion_Laboratorios
 
         private void AgregarAula_Load(object sender, EventArgs e)
         {
+
+            //Para llenar combo box desde la base de datos
+            string constr = @"Data Source=AARONLAPTOP;Initial Catalog=Gestion_laboratorios;Integrated Security=True";
+
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter("SELECT IdEdificio, Nombre FROM Edificios", con))
+                {
+
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    DataRow row = dt.NewRow();
+                    row[0] = 0;
+                    row[1] = "Seleccione edificio";
+                    dt.Rows.InsertAt(row, 0);
+
+                    cbxEdificio.DataSource = dt;
+                    cbxEdificio.DisplayMember = "Nombre";
+                    cbxEdificio.ValueMember = "IdEdificio";
+                }
+                using (SqlDataAdapter sda = new SqlDataAdapter("SELECT IdCampus, Nombre FROM Campus", con))
+                {
+
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    DataRow row = dt.NewRow();
+                    row[0] = 0;
+                    row[1] = "Seleccione campus";
+                    dt.Rows.InsertAt(row, 0);
+
+                    cbxCampus.DataSource = dt;
+                    cbxCampus.DisplayMember = "Nombre";
+                    cbxCampus.ValueMember = "IdCampus";
+                }
+            }
+            //FIN para llenar combo box 
+
             try
             {
                 numIdAula.Text = IdAula;
@@ -71,36 +110,58 @@ namespace Gestion_Laboratorios
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            void verificarCampos()
             {
-                string sql = "";
-                if (modo.Equals("C"))
-                {
-                    sql = "insert into Aula Values ('";
+                VerCampos(txtNombreAula);
+                VerCampos(txtCapacidad);
+                VerCampos(txtCuposRes);
 
-                    sql += numIdAula.Value + "','" + txtNombreAula.Text + "','" + txtTipoAula.Text + "','" + cbxEdificio.Text + "','" + txtCapacidad.Text + "','" + txtCuposRes.Text + "','" + cbxEstado.Text + "')";
+
+            }
+
+            verificarCampos();
+            void VerCampos(TextBox tb)
+            {
+                if (string.IsNullOrEmpty(tb.Text))
+                {
+                    MessageBox.Show(tb.Name + " Debe llenar esta(s) casilla(s)");
                 }
                 else
                 {
-                    sql = " update Aula set ";
 
-                    sql += "Nombre = '" + txtNombreAula.Text + "',";
-                    sql += "TipoAula = '" + txtTipoAula.Text + "',";
-                    sql += "Edificio = '" + cbxEdificio.Text + "',";
-                    sql += "Capacidad = '" + txtCapacidad.Text + "',";
-                    sql += "CuposReservados = '" + txtCuposRes.Text + "',";
-                    sql += "Estado = '" + cbxEstado.Text + "'";
-                    sql += "where IdAula = '" + numIdAula.Value + "'";
+
+                    try
+                    {
+                        string sql = "";
+                        if (modo.Equals("C"))
+                        {
+                            sql = "insert into Aula Values ('";
+
+                            sql += numIdAula.Value + "','" + txtNombreAula.Text + "','" + txtTipoAula.Text + "','" + cbxEdificio.Text + "','" + txtCapacidad.Text + "','" + txtCuposRes.Text + "','" + cbxEstado.Text + "')";
+                        }
+                        else
+                        {
+                            sql = " update Aula set ";
+
+                            sql += "Nombre = '" + txtNombreAula.Text + "',";
+                            sql += "TipoAula = '" + txtTipoAula.Text + "',";
+                            sql += "Edificio = '" + cbxEdificio.Text + "',";
+                            sql += "Capacidad = '" + txtCapacidad.Text + "',";
+                            sql += "CuposReservados = '" + txtCuposRes.Text + "',";
+                            sql += "Estado = '" + cbxEstado.Text + "'";
+                            sql += "where IdAula = '" + numIdAula.Value + "'";
+                        }
+                        SqlCommand cmd = new SqlCommand(sql, con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Registro guardado con exito");
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Error al guardar " + ex.Message);
+                    }
                 }
-                SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Registro guardado con exito");
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error al guardar " + ex.Message);
             }
         }
 

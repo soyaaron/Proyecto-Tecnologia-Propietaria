@@ -28,6 +28,29 @@ namespace Gestion_Laboratorios
 
         private void FrmAgregarEdificio_Load(object sender, EventArgs e)
         {
+            //Para llenar combo box desde la base de datos
+            string constr = @"Data Source=AARONLAPTOP;Initial Catalog=Gestion_laboratorios;Integrated Security=True";
+            z
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter("SELECT IdCampus, Nombre FROM Campus", con))
+                {
+                  
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    DataRow row = dt.NewRow();
+                    row[0] = 0;
+                    row[1] = "Seleccione campus";
+                    dt.Rows.InsertAt(row, 0);
+
+                    cbxCampus.DataSource = dt;
+                    cbxCampus.DisplayMember = "Nombre";
+                    cbxCampus.ValueMember = "IdCampus";
+                }
+            }
+            //FIN para llenar combo box 
+
             try
             {
                 numIdEdificio.Text = IdEdificio;
@@ -45,33 +68,54 @@ namespace Gestion_Laboratorios
 
         private void ClickGuardar(object sender, EventArgs e)
         {
-            try
-            {
-                string sql = "";
-                if (modo.Equals("C"))
-                {
-                    sql = "insert into Edificios Values ('";
 
-                    sql += numIdEdificio.Value + "','" + txtNombreEdificio.Text + "','" + cbxCampus.Text + "','" + cbxEstado.Text + "')";
+            void verificarCampos()
+            {
+                VerCampos(txtNombreEdificio);
+
+
+            }
+
+            verificarCampos();
+            void VerCampos(TextBox tb)
+            {
+                if (string.IsNullOrEmpty(tb.Text))
+                {
+                    MessageBox.Show(tb.Name + " Debe llenar esta(s) casilla(s)");
                 }
                 else
                 {
-                    sql = " update Edificios set ";
 
-                    sql += "Nombre = '" + txtNombreEdificio.Text + "',";
-                    sql += "Campus = '" + cbxCampus.Text + "',";
-                    sql += "Estado = '" + cbxEstado.Text + "'";
-                    sql += "where IdEdificio = '" + numIdEdificio.Value + "'";
+
+                    try
+                    {
+                        string sql = "";
+                        if (modo.Equals("C"))
+                        {
+                            sql = "insert into Edificios Values ('";
+
+                            sql += numIdEdificio.Value + "','" + txtNombreEdificio.Text + "','" + cbxCampus.Text + "','" + cbxEstado.Text + "')";
+                        }
+                        else
+                        {
+                            sql = " update Edificios set ";
+
+                            sql += "Nombre = '" + txtNombreEdificio.Text + "',";
+                            sql += "Campus = '" + cbxCampus.Text + "',";
+                            sql += "Estado = '" + cbxEstado.Text + "'";
+                            sql += "where IdEdificio = '" + numIdEdificio.Value + "'";
+                        }
+                        SqlCommand cmd = new SqlCommand(sql, con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Registro guardado con exito");
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Error al guardar " + ex.Message);
+                    }
                 }
-                SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Registro guardado con exito");
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error al guardar " + ex.Message);
             }
         }
 
@@ -148,15 +192,7 @@ namespace Gestion_Laboratorios
         private void LoadCampus(object sender, EventArgs e)
         {
   
-            string sql = "select Nombre from Campus";
-            SqlCommand cmd = new SqlCommand(sql, con);
 
-            SqlDataReader DR = cmd.ExecuteReader();
-            while (DR.Read())
-            {
-                cbxCampus.Items.Add(DR[0]);
-
-            };
 
         }
     }

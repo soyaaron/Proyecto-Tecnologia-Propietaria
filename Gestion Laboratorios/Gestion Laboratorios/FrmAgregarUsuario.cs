@@ -54,37 +54,65 @@ namespace Gestion_Laboratorios
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            void verificarCampos()
             {
-                string sql = "";
-                if (modo.Equals("C"))
+                VerCampos(txtNombreUsr);
+                VerCampos(txtca);
+                VerCampos(txtNombreUsr);
+
+                VerCampos(txtNombreUsr);
+                 VerCampos(txtNombreUsr);
+                VerCampos(txtNombreUsr);
+
+
+
+            }
+
+            verificarCampos();
+            void VerCampos(TextBox tb)
+            {
+                if (string.IsNullOrEmpty(tb.Text))
                 {
-                    sql = "insert into Usuario Values ('";
-                    sql += numIdUsr.Value + "','" + txtNombreUsr.Text + "','" + txtApellidoUsr.Text + "','" + txtCedula.Text + "','";
-                    sql += txtNoCarnet.Text + "','" + cbxTipo.Text + "','" + cbxEstado.Text + "')";
+                    MessageBox.Show(tb.Name + " Debe llenar esta(s) casilla(s)");
                 }
                 else
                 {
-                    sql = " update Usuario set ";
-
-                    sql += "Nombre = '" + txtNombreUsr.Text + "',";
-                    sql += "Apellido = '" + txtApellidoUsr.Text + "',";
-                    sql += "Cedula = '" + txtCedula.Text + "',";
-                    sql += "NCarnet = '" + txtNoCarnet.Text + "',";
-                    sql += "TipoUsuario = '" + cbxTipo.Text + "',";
-                    sql += "Estado = '" + cbxEstado.Text + "',";
 
 
+                    try
+
+                    {
+                        string sql = "";
+                        if (modo.Equals("C"))
+                        {
+                            sql = "insert into Usuario Values ('";
+                            sql += numIdUsr.Value + "','" + txtNombreUsr.Text + "','" + txtApellidoUsr.Text + "','" + txtCedula.Text + "','";
+                            sql += txtNoCarnet.Text + "','" + cbxTipo.Text + "','" + cbxEstado.Text + "')";
+                        }
+                        else
+                        {
+                            sql = " update Usuario set ";
+
+                            sql += "Nombre = '" + txtNombreUsr.Text + "',";
+                            sql += "Apellido = '" + txtApellidoUsr.Text + "',";
+                            sql += "Cedula = '" + txtCedula.Text + "',";
+                            sql += "NCarnet = '" + txtNoCarnet.Text + "',";
+                            sql += "TipoUsuario = '" + cbxTipo.Text + "',";
+                            sql += "Estado = '" + cbxEstado.Text + "',";
+
+
+                        }
+                        SqlCommand cmd = new SqlCommand(sql, con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Registro Guardado con exito");
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Error al guardar " + ex.Message);
+                    }
                 }
-                SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Registro Guardado con exito");
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error al guardar " + ex.Message);
             }
         }
 

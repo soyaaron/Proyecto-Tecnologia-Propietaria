@@ -45,6 +45,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtCuposRes = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.cbxCampus = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numIdAula)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +64,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 196);
+            this.label4.Location = new System.Drawing.Point(37, 222);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 29;
@@ -104,7 +106,7 @@
             this.cbxEstado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cbxEstado.Location = new System.Drawing.Point(138, 193);
+            this.cbxEstado.Location = new System.Drawing.Point(139, 219);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(121, 21);
             this.cbxEstado.TabIndex = 25;
@@ -168,7 +170,7 @@
             // 
             // txtCapacidad
             // 
-            this.txtCapacidad.Location = new System.Drawing.Point(138, 133);
+            this.txtCapacidad.Location = new System.Drawing.Point(139, 159);
             this.txtCapacidad.Name = "txtCapacidad";
             this.txtCapacidad.Size = new System.Drawing.Size(160, 20);
             this.txtCapacidad.TabIndex = 34;
@@ -176,7 +178,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 137);
+            this.label6.Location = new System.Drawing.Point(37, 163);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 33;
@@ -184,7 +186,7 @@
             // 
             // txtCuposRes
             // 
-            this.txtCuposRes.Location = new System.Drawing.Point(138, 162);
+            this.txtCuposRes.Location = new System.Drawing.Point(139, 188);
             this.txtCuposRes.Name = "txtCuposRes";
             this.txtCuposRes.Size = new System.Drawing.Size(160, 20);
             this.txtCuposRes.TabIndex = 36;
@@ -192,17 +194,39 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(36, 166);
+            this.label7.Location = new System.Drawing.Point(37, 192);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 35;
             this.label7.Text = "Cupos Res";
+            // 
+            // cbxCampus
+            // 
+            this.cbxCampus.FormattingEnabled = true;
+            this.cbxCampus.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cbxCampus.Location = new System.Drawing.Point(138, 133);
+            this.cbxCampus.Name = "cbxCampus";
+            this.cbxCampus.Size = new System.Drawing.Size(121, 21);
+            this.cbxCampus.TabIndex = 38;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(36, 136);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Campus";
             // 
             // AgregarAula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(475, 294);
+            this.Controls.Add(this.cbxCampus);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtCuposRes);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtCapacidad);
@@ -248,5 +272,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtCuposRes;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbxCampus;
+        private System.Windows.Forms.Label label8;
     }
 }
