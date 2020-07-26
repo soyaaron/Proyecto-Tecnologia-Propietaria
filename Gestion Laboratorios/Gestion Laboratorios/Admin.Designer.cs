@@ -28,12 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lblmensajeAdmin = new System.Windows.Forms.Label();
+            this.lblAdmin = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // lblmensajeAdmin
+            // 
+            this.lblmensajeAdmin.AutoSize = true;
+            this.lblmensajeAdmin.Location = new System.Drawing.Point(0, 0);
+            this.lblmensajeAdmin.Name = "lblmensajeAdmin";
+            this.lblmensajeAdmin.Size = new System.Drawing.Size(0, 17);
+            this.lblmensajeAdmin.TabIndex = 0;
+            // 
+            // lblAdmin
+            // 
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.Location = new System.Drawing.Point(506, 143);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(95, 17);
+            this.lblAdmin.TabIndex = 1;
+            this.lblAdmin.Text = "Administrador";
+            // 
+            // Admin
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblAdmin);
+            this.Controls.Add(this.lblmensajeAdmin);
+            this.Name = "Admin";
             this.Text = "Admin";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblmensajeAdmin;
+        private System.Windows.Forms.Label lblAdmin;
     }
 }

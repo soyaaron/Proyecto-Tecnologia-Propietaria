@@ -73,5 +73,45 @@ namespace Gestion_Laboratorios
         {
 
         }
+        public void logear(string usuario, string contrasena) {
+
+            try
+            {
+                con.open();
+                sqlComand cmd = new sqlComand("SELECT Nombre, Tipo_usuario FROM usuarios WHERE Usuario = @usuarios AND Password = @pas", con);
+                cmd.Parameters.AddWithValue("usuarios", usuario);
+                cmd.Parameters.AddWithValue("pas", contrasena);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                if (dt.Rows.Count == 1)
+                {
+                    this.Hide();
+                    if (dt.Rows[0][1].ToString() == "Admin")
+                    {
+                        new Admin(dt.Rows[0][0].ToString()).Show();
+                    }
+                    else if (dt.Rows[0][1].ToString() == "Usuario")
+                    {
+                        new Login_Usuario(dt.Rows[0][0].ToString()).Show();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Usuarios y/o Contraseña Incorracta");
+                }
+
+            } catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            logear(this.textBox1.text, this.textBox2.text);
+
+        }
     }
 }

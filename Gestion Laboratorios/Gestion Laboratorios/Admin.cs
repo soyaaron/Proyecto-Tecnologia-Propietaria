@@ -12,9 +12,10 @@ namespace Gestion_Laboratorios
 {
     public partial class Admin : Form
     {
-        public Admin()
+        public Admin(string nombre)
         {
             InitializeComponent();
+            lblmensajeAdmin.Text = nombre;
         }
     }
 }

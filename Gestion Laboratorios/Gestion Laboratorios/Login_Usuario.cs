@@ -12,9 +12,10 @@ namespace Gestion_Laboratorios
 {
     public partial class Login_Usuario : Form
     {
-        public Login_Usuario()
+        public Login_Usuario(string nombre)
         {
             InitializeComponent();
+            lblmensaje.Text = nombre;
         }
     }
 }
