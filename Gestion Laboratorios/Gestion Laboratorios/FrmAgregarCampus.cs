@@ -89,6 +89,7 @@ namespace Gestion_Laboratorios
                         MessageBox.Show("Error al guardar " + ex.Message);
                     }
                 }
+            }
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)

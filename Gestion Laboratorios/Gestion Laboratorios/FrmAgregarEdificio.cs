@@ -30,7 +30,7 @@ namespace Gestion_Laboratorios
         {
             //Para llenar combo box desde la base de datos
             string constr = @"Data Source=AARONLAPTOP;Initial Catalog=Gestion_laboratorios;Integrated Security=True";
-            z
+            
             using (SqlConnection con = new SqlConnection(constr))
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter("SELECT IdCampus, Nombre FROM Campus", con))

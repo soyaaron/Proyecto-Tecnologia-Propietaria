@@ -45,6 +45,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.fechaIngreso = new System.Windows.Forms.DateTimePicker();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numIdEmp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,7 +125,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(293, 254);
+            this.btnGuardar.Location = new System.Drawing.Point(320, 318);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 62;
@@ -131,7 +135,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(374, 254);
+            this.btnCancelar.Location = new System.Drawing.Point(401, 318);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 61;
@@ -200,11 +204,47 @@
             this.fechaIngreso.Size = new System.Drawing.Size(121, 20);
             this.fechaIngreso.TabIndex = 72;
             // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Location = new System.Drawing.Point(124, 238);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Size = new System.Drawing.Size(160, 20);
+            this.txtContrasena.TabIndex = 76;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(22, 242);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 13);
+            this.label8.TabIndex = 75;
+            this.label8.Text = "Contrasena";
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(124, 209);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(160, 20);
+            this.txtUsuario.TabIndex = 74;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 213);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.TabIndex = 73;
+            this.label9.Text = "Usuario";
+            // 
             // FrmAgregarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 292);
+            this.ClientSize = new System.Drawing.Size(488, 353);
+            this.Controls.Add(this.txtContrasena);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.fechaIngreso);
             this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.label7);
@@ -250,5 +290,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker fechaIngreso;
+        private System.Windows.Forms.TextBox txtContrasena;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.Label label9;
     }
 }
