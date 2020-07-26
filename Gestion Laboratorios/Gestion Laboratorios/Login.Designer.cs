@@ -46,40 +46,46 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 26);
+            this.label1.Location = new System.Drawing.Point(17, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(57, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario";
             // 
             // txtusuario
             // 
-            this.txtusuario.Location = new System.Drawing.Point(80, 23);
+            this.txtusuario.Location = new System.Drawing.Point(107, 28);
+            this.txtusuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(264, 20);
+            this.txtusuario.Size = new System.Drawing.Size(351, 22);
             this.txtusuario.TabIndex = 1;
+            this.txtusuario.TextChanged += new System.EventHandler(this.txtusuario_TextChanged);
             // 
             // txtcontrasena
             // 
-            this.txtcontrasena.Location = new System.Drawing.Point(80, 74);
+            this.txtcontrasena.Location = new System.Drawing.Point(107, 91);
+            this.txtcontrasena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtcontrasena.Name = "txtcontrasena";
-            this.txtcontrasena.Size = new System.Drawing.Size(264, 20);
+            this.txtcontrasena.Size = new System.Drawing.Size(351, 22);
             this.txtcontrasena.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 77);
+            this.label2.Location = new System.Drawing.Point(17, 95);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(81, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Contraseña";
             // 
             // ingresar
             // 
-            this.ingresar.Location = new System.Drawing.Point(161, 139);
+            this.ingresar.Location = new System.Drawing.Point(215, 171);
+            this.ingresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ingresar.Name = "ingresar";
-            this.ingresar.Size = new System.Drawing.Size(75, 23);
+            this.ingresar.Size = new System.Drawing.Size(100, 28);
             this.ingresar.TabIndex = 4;
             this.ingresar.Text = "Ingresar";
             this.ingresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -88,14 +94,15 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 174);
+            this.ClientSize = new System.Drawing.Size(524, 214);
             this.Controls.Add(this.ingresar);
             this.Controls.Add(this.txtcontrasena);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
