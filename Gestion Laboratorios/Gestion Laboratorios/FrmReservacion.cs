@@ -184,8 +184,15 @@ namespace Gestion_Laboratorios
             this.Close();
         }
 
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
 
+        }
 
+        private void numNumeroReserv_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

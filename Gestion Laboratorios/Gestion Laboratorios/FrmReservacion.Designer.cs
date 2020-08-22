@@ -105,6 +105,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 7;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // fexhaReserva
             // 
@@ -236,6 +237,7 @@
             this.numNumeroReserv.Name = "numNumeroReserv";
             this.numNumeroReserv.Size = new System.Drawing.Size(68, 20);
             this.numNumeroReserv.TabIndex = 20;
+            this.numNumeroReserv.ValueChanged += new System.EventHandler(this.numNumeroReserv_ValueChanged);
             // 
             // EliminarReserv
             // 

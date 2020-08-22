@@ -115,6 +115,18 @@
     <Compile Include="FrmAgregarEdificio.Designer.cs">
       <DependentUpon>FrmAgregarEdificio.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmParametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmParametros.Designer.cs">
+      <DependentUpon>FrmParametros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVisionReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisionReporte.Designer.cs">
+      <DependentUpon>FrmVisionReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gestion de aulas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +224,12 @@
     <Compile Include="Reservacion.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="SeleccionDeAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleccionDeAsignatura.Designer.cs">
+      <DependentUpon>SeleccionDeAsignatura.cs</DependentUpon>
+    </Compile>
     <Compile Include="TipoAula.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -241,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregarUsuario.resx">
       <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmParametros.resx">
+      <DependentUpon>FrmParametros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestion de aulas.resx">
       <DependentUpon>Gestion de aulas.cs</DependentUpon>
@@ -279,6 +300,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SeleccionDeAsignatura.resx">
+      <DependentUpon>SeleccionDeAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="GestionLabModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GestionLabModel.Designer.cs</LastGenOutput>
@@ -339,7 +363,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\61764.png" />
     <Content Include="Resources\iconmonstr-lock-21-64.png" />
+    <None Include="Resources\lupa.png" />
+    <None Include="Resources\iconmonstr-plus-5-64.png" />
     <None Include="Resources\download.png" />
     <None Include="Resources\images.png" />
     <None Include="Resources\untitled.png" />
