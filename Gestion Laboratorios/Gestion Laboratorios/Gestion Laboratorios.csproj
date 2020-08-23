@@ -121,6 +121,12 @@
     <Compile Include="FrmParametros.Designer.cs">
       <DependentUpon>FrmParametros.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReservacionDeHoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReservacionDeHoras.Designer.cs">
+      <DependentUpon>FrmReservacionDeHoras.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVisionReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,11 +230,11 @@
     <Compile Include="Reservacion.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="SeleccionDeAsignatura.cs">
+    <Compile Include="ReservaciondeHora.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SeleccionDeAsignatura.Designer.cs">
-      <DependentUpon>SeleccionDeAsignatura.cs</DependentUpon>
+    <Compile Include="ReservaciondeHora.Designer.cs">
+      <DependentUpon>ReservaciondeHora.cs</DependentUpon>
     </Compile>
     <Compile Include="TipoAula.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -262,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmParametros.resx">
       <DependentUpon>FrmParametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReservacionDeHoras.resx">
+      <DependentUpon>FrmReservacionDeHoras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestion de aulas.resx">
       <DependentUpon>Gestion de aulas.cs</DependentUpon>
@@ -300,8 +309,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SeleccionDeAsignatura.resx">
-      <DependentUpon>SeleccionDeAsignatura.cs</DependentUpon>
+    <EmbeddedResource Include="ReservaciondeHora.resx">
+      <DependentUpon>ReservaciondeHora.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="GestionLabModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

@@ -21,5 +21,10 @@ namespace Gestion_Laboratorios
         {
 
         }
+
+        private void Reporteria_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
